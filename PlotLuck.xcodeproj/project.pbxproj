@@ -17,6 +17,9 @@
 		C611DEF52B7A7F2500F92A18 /* ReadingListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C611DEF42B7A7F2500F92A18 /* ReadingListItem.swift */; };
 		C611DEF82B7A7F4F00F92A18 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = C611DEF72B7A7F4F00F92A18 /* Book.swift */; };
 		C611DEFA2B7A7F5900F92A18 /* ReadingStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C611DEF92B7A7F5900F92A18 /* ReadingStatus.swift */; };
+		C611DEFD2B7A874900F92A18 /* ReadingListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C611DEFC2B7A874900F92A18 /* ReadingListRepository.swift */; };
+		C611DEFF2B7A87AA00F92A18 /* CRUDRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C611DEFE2B7A87AA00F92A18 /* CRUDRepository.swift */; };
+		C611DF022B7A887700F92A18 /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C611DF012B7A887700F92A18 /* UseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +53,9 @@
 		C611DEF42B7A7F2500F92A18 /* ReadingListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingListItem.swift; sourceTree = "<group>"; };
 		C611DEF72B7A7F4F00F92A18 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		C611DEF92B7A7F5900F92A18 /* ReadingStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingStatus.swift; sourceTree = "<group>"; };
+		C611DEFC2B7A874900F92A18 /* ReadingListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingListRepository.swift; sourceTree = "<group>"; };
+		C611DEFE2B7A87AA00F92A18 /* CRUDRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRUDRepository.swift; sourceTree = "<group>"; };
+		C611DF012B7A887700F92A18 /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +108,7 @@
 			children = (
 				C611DECA2B7A747000F92A18 /* PlotLuckApp.swift */,
 				C611DEF62B7A7F3000F92A18 /* Data */,
+				C611DF032B7A89EB00F92A18 /* Domain */,
 				C611DECC2B7A747000F92A18 /* ContentView.swift */,
 				C611DECE2B7A747100F92A18 /* Assets.xcassets */,
 				C611DED02B7A747100F92A18 /* Preview Content */,
@@ -137,11 +144,37 @@
 		C611DEF62B7A7F3000F92A18 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				C611DF002B7A885600F92A18 /* Repository */,
+				C611DEFB2B7A86B600F92A18 /* Models */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		C611DEFB2B7A86B600F92A18 /* Models */ = {
+			isa = PBXGroup;
+			children = (
 				C611DEF42B7A7F2500F92A18 /* ReadingListItem.swift */,
 				C611DEF72B7A7F4F00F92A18 /* Book.swift */,
 				C611DEF92B7A7F5900F92A18 /* ReadingStatus.swift */,
 			);
-			path = Data;
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C611DF002B7A885600F92A18 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				C611DEFE2B7A87AA00F92A18 /* CRUDRepository.swift */,
+				C611DEFC2B7A874900F92A18 /* ReadingListRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		C611DF032B7A89EB00F92A18 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				C611DF012B7A887700F92A18 /* UseCase.swift */,
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,7 +308,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C611DEF82B7A7F4F00F92A18 /* Book.swift in Sources */,
+				C611DF022B7A887700F92A18 /* UseCase.swift in Sources */,
 				C611DECD2B7A747000F92A18 /* ContentView.swift in Sources */,
+				C611DEFD2B7A874900F92A18 /* ReadingListRepository.swift in Sources */,
+				C611DEFF2B7A87AA00F92A18 /* CRUDRepository.swift in Sources */,
 				C611DEF52B7A7F2500F92A18 /* ReadingListItem.swift in Sources */,
 				C611DEFA2B7A7F5900F92A18 /* ReadingStatus.swift in Sources */,
 				C611DECB2B7A747000F92A18 /* PlotLuckApp.swift in Sources */,
