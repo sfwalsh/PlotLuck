@@ -14,6 +14,9 @@
 		C611DEDC2B7A747200F92A18 /* PlotLuckTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C611DEDB2B7A747200F92A18 /* PlotLuckTests.swift */; };
 		C611DEE62B7A747200F92A18 /* PlotLuckUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C611DEE52B7A747200F92A18 /* PlotLuckUITests.swift */; };
 		C611DEE82B7A747200F92A18 /* PlotLuckUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C611DEE72B7A747200F92A18 /* PlotLuckUITestsLaunchTests.swift */; };
+		C611DEF52B7A7F2500F92A18 /* ReadingListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C611DEF42B7A7F2500F92A18 /* ReadingListItem.swift */; };
+		C611DEF82B7A7F4F00F92A18 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = C611DEF72B7A7F4F00F92A18 /* Book.swift */; };
+		C611DEFA2B7A7F5900F92A18 /* ReadingStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C611DEF92B7A7F5900F92A18 /* ReadingStatus.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		C611DEE12B7A747200F92A18 /* PlotLuckUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlotLuckUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C611DEE52B7A747200F92A18 /* PlotLuckUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlotLuckUITests.swift; sourceTree = "<group>"; };
 		C611DEE72B7A747200F92A18 /* PlotLuckUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlotLuckUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C611DEF42B7A7F2500F92A18 /* ReadingListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingListItem.swift; sourceTree = "<group>"; };
+		C611DEF72B7A7F4F00F92A18 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		C611DEF92B7A7F5900F92A18 /* ReadingStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingStatus.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				C611DECA2B7A747000F92A18 /* PlotLuckApp.swift */,
+				C611DEF62B7A7F3000F92A18 /* Data */,
 				C611DECC2B7A747000F92A18 /* ContentView.swift */,
 				C611DECE2B7A747100F92A18 /* Assets.xcassets */,
 				C611DED02B7A747100F92A18 /* Preview Content */,
@@ -125,6 +132,16 @@
 				C611DEE72B7A747200F92A18 /* PlotLuckUITestsLaunchTests.swift */,
 			);
 			path = PlotLuckUITests;
+			sourceTree = "<group>";
+		};
+		C611DEF62B7A7F3000F92A18 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				C611DEF42B7A7F2500F92A18 /* ReadingListItem.swift */,
+				C611DEF72B7A7F4F00F92A18 /* Book.swift */,
+				C611DEF92B7A7F5900F92A18 /* ReadingStatus.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +274,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C611DEF82B7A7F4F00F92A18 /* Book.swift in Sources */,
 				C611DECD2B7A747000F92A18 /* ContentView.swift in Sources */,
+				C611DEF52B7A7F2500F92A18 /* ReadingListItem.swift in Sources */,
+				C611DEFA2B7A7F5900F92A18 /* ReadingStatus.swift in Sources */,
 				C611DECB2B7A747000F92A18 /* PlotLuckApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
