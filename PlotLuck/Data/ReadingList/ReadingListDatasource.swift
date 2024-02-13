@@ -18,6 +18,7 @@ protocol ReadingListDatasource {
 struct LocalReadingListDatasource: ReadingListDatasource {
     private let modelContext: ModelContext
     
+    @MainActor
     init(modelContext: ModelContext) {
         self.modelContext = modelContext
     }
@@ -29,9 +30,10 @@ struct LocalReadingListDatasource: ReadingListDatasource {
     
     func removeItem(_ item: ReadingListItem) throws {
         modelContext.delete(item)
+        try modelContext.save()
     }
     
     func fetchItems() throws -> [ReadingListItem] {
-        try modelContext.fetch(FetchDescriptor<ReadingListItem>())
+        try modelContext.fetch(FetchDescriptor<ReadingListItem>(sortBy:  [SortDescriptor(\.book.title)]))
     }
 }
