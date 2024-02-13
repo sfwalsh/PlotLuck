@@ -11,6 +11,7 @@ import SwiftData
 protocol ReadingListDatasource {
     typealias Default = LocalReadingListDatasource
     func addItem(_ item: ReadingListItem) throws
+    func update(updateModel: ReadingListUpdateModel) throws
     func removeItem(_ item: ReadingListItem) throws
     func fetchItems() throws -> [ReadingListItem]
 }
@@ -25,6 +26,18 @@ struct LocalReadingListDatasource: ReadingListDatasource {
     
     func addItem(_ item: ReadingListItem) throws {
         modelContext.insert(item)
+        try modelContext.save()
+    }
+    
+    func update(updateModel: ReadingListUpdateModel) throws {
+        switch updateModel.updateType {
+        case .readingStatus(let readingStatus):
+            updateModel.itemToUpdate.status = readingStatus
+        case .bookTitle(let title):
+            break
+        case .bookAuthor(let author):
+            break
+        }
         try modelContext.save()
     }
     

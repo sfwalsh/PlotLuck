@@ -19,6 +19,9 @@
 		C611DF062B7A8A4400F92A18 /* AddReadingListItemUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C611DF052B7A8A4400F92A18 /* AddReadingListItemUseCase.swift */; };
 		C611DF082B7A8E2100F92A18 /* ReadingListDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C611DF072B7A8E2100F92A18 /* ReadingListDatasource.swift */; };
 		C611DF0A2B7A91AC00F92A18 /* MockReadingListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C611DF092B7A91AC00F92A18 /* MockReadingListRepository.swift */; };
+		C620168F2B7C157A0027BCBB /* UpdateReadingListItemUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C620168E2B7C157A0027BCBB /* UpdateReadingListItemUseCase.swift */; };
+		C62016912B7C1AD00027BCBB /* ReadingListItemUpdateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62016902B7C1AD00027BCBB /* ReadingListItemUpdateModel.swift */; };
+		C62016932B7C1C9E0027BCBB /* UpdateReadingListItemUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62016922B7C1C9E0027BCBB /* UpdateReadingListItemUseCaseTests.swift */; };
 		C6DC7C552B7BE346005D23DE /* ErrorLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DC7C542B7BE346005D23DE /* ErrorLogger.swift */; };
 		C6DC7C582B7BE3A9005D23DE /* CrashlyticsLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DC7C572B7BE3A9005D23DE /* CrashlyticsLogger.swift */; };
 		C6DC7C5C2B7BE5CF005D23DE /* FetchReadingListItemsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DC7C5B2B7BE5CF005D23DE /* FetchReadingListItemsUseCase.swift */; };
@@ -58,6 +61,9 @@
 		C611DF052B7A8A4400F92A18 /* AddReadingListItemUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReadingListItemUseCase.swift; sourceTree = "<group>"; };
 		C611DF072B7A8E2100F92A18 /* ReadingListDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingListDatasource.swift; sourceTree = "<group>"; };
 		C611DF092B7A91AC00F92A18 /* MockReadingListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockReadingListRepository.swift; sourceTree = "<group>"; };
+		C620168E2B7C157A0027BCBB /* UpdateReadingListItemUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateReadingListItemUseCase.swift; sourceTree = "<group>"; };
+		C62016902B7C1AD00027BCBB /* ReadingListItemUpdateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingListItemUpdateModel.swift; sourceTree = "<group>"; };
+		C62016922B7C1C9E0027BCBB /* UpdateReadingListItemUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateReadingListItemUseCaseTests.swift; sourceTree = "<group>"; };
 		C6DC7C542B7BE346005D23DE /* ErrorLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorLogger.swift; sourceTree = "<group>"; };
 		C6DC7C572B7BE3A9005D23DE /* CrashlyticsLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashlyticsLogger.swift; sourceTree = "<group>"; };
 		C6DC7C5B2B7BE5CF005D23DE /* FetchReadingListItemsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchReadingListItemsUseCase.swift; sourceTree = "<group>"; };
@@ -170,6 +176,7 @@
 		C611DF032B7A89EB00F92A18 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				C62016902B7C1AD00027BCBB /* ReadingListItemUpdateModel.swift */,
 				C611DF042B7A8A3300F92A18 /* UseCases */,
 				C6DC7C562B7BE397005D23DE /* LoggerServices */,
 			);
@@ -182,6 +189,7 @@
 				C611DF012B7A887700F92A18 /* UseCase.swift */,
 				C611DF052B7A8A4400F92A18 /* AddReadingListItemUseCase.swift */,
 				C6DC7C5F2B7BF761005D23DE /* RemoveReadingListItemUseCase.swift */,
+				C620168E2B7C157A0027BCBB /* UpdateReadingListItemUseCase.swift */,
 				C6DC7C5B2B7BE5CF005D23DE /* FetchReadingListItemsUseCase.swift */,
 			);
 			path = UseCases;
@@ -209,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				C611DEDB2B7A747200F92A18 /* AddReadingListItemUseCaseTests.swift */,
+				C62016922B7C1C9E0027BCBB /* UpdateReadingListItemUseCaseTests.swift */,
 				C6DC7C612B7BF9F2005D23DE /* RemoveReadingListItemUseCaseTests.swift */,
 				C6DC7C5D2B7BEEC7005D23DE /* FetchReadingListItemsUseCaseTests.swift */,
 			);
@@ -347,6 +356,7 @@
 				C6DC7C582B7BE3A9005D23DE /* CrashlyticsLogger.swift in Sources */,
 				C611DF022B7A887700F92A18 /* UseCase.swift in Sources */,
 				C611DEFD2B7A874900F92A18 /* ReadingListRepository.swift in Sources */,
+				C620168F2B7C157A0027BCBB /* UpdateReadingListItemUseCase.swift in Sources */,
 				C6DC7C552B7BE346005D23DE /* ErrorLogger.swift in Sources */,
 				C6E28A7D2B7BCA590033E2B6 /* ReadingListView+ViewModel.swift in Sources */,
 				C6DC7C5C2B7BE5CF005D23DE /* FetchReadingListItemsUseCase.swift in Sources */,
@@ -355,6 +365,7 @@
 				C611DF062B7A8A4400F92A18 /* AddReadingListItemUseCase.swift in Sources */,
 				C611DEFA2B7A7F5900F92A18 /* ReadingStatus.swift in Sources */,
 				C6E28A812B7BCE180033E2B6 /* ViewFactory.swift in Sources */,
+				C62016912B7C1AD00027BCBB /* ReadingListItemUpdateModel.swift in Sources */,
 				C6DC7C602B7BF761005D23DE /* RemoveReadingListItemUseCase.swift in Sources */,
 				C6E28A7A2B7BCA110033E2B6 /* ReadingListView.swift in Sources */,
 				C611DECB2B7A747000F92A18 /* PlotLuckApp.swift in Sources */,
@@ -368,6 +379,7 @@
 				C611DF0A2B7A91AC00F92A18 /* MockReadingListRepository.swift in Sources */,
 				C6DC7C5E2B7BEEC7005D23DE /* FetchReadingListItemsUseCaseTests.swift in Sources */,
 				C6E28A732B7BBBE90033E2B6 /* MockError.swift in Sources */,
+				C62016932B7C1C9E0027BCBB /* UpdateReadingListItemUseCaseTests.swift in Sources */,
 				C6DC7C622B7BF9F2005D23DE /* RemoveReadingListItemUseCaseTests.swift in Sources */,
 				C6E28A772B7BC6120033E2B6 /* LocalReadingListDataSourceTests.swift in Sources */,
 				C611DEDC2B7A747200F92A18 /* AddReadingListItemUseCaseTests.swift in Sources */,
