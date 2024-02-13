@@ -6,7 +6,17 @@
 //
 
 import Foundation
+import SwiftData
 
-struct Book: Equatable {
-    let title, author, isbn: String
+@Model
+final class Book: Equatable {
+    let title: String
+    let author: String
+    let isbn: String
+    
+    init(title: String, author: String, isbn: String) {
+        self.title = title
+        self.author = author
+        self.isbn = isbn
+    }
 }

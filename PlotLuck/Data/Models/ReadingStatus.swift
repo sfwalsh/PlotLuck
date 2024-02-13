@@ -6,7 +6,8 @@
 //
 
 import Foundation
+import SwiftData
 
-enum ReadingStatus: Equatable {
+enum ReadingStatus: Codable, Equatable {
     case unread, inProgress, finished
 }

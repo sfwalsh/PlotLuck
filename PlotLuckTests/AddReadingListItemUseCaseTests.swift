@@ -6,15 +6,30 @@
 //
 
 import XCTest
+import SwiftData
 @testable import PlotLuck
 
 final class AddReadingListItemUseCaseTests: XCTestCase {
+    
+    private var modelContainer: ModelContainer?
+    
+    override func setUp() async throws {
+        let config = ModelConfiguration(isStoredInMemoryOnly: true)
+        self.modelContainer = try ModelContainer(for: ReadingListItem.self, Book.self, configurations: config)
+    }
     
     func testAddReadingListItem_Success() async {
         // Given
         let repository = MockReadingListRepository()
         let useCase = AddReadingListItemUseCase(repository: repository)
-        let item = ReadingListItem(book: .init(title: "", author: "", isbn: ""), status: .unread)
+        let item = ReadingListItem(
+            book: .init(
+                title: "Norweigan Wood",
+                author: "Haruki Murakami",
+                isbn: "9781784877996"
+            ),
+            status: .unread
+        )
         
         // When
         let result = await useCase.execute(for: item)
@@ -32,7 +47,15 @@ final class AddReadingListItemUseCaseTests: XCTestCase {
         // Given
         let repository = MockReadingListRepository()
         let useCase = AddReadingListItemUseCase(repository: repository)
-        let item = ReadingListItem(book: .init(title: "", author: "", isbn: ""), status: .unread)
+        let item = ReadingListItem(
+            book: .init(
+                title: "Norweigan Wood",
+                author: "Haruki Murakami",
+                isbn: "9781784877996"
+            ),
+            status: .unread
+        )
+        
         repository.errorValue = MockError(errorDescription: "Could not add Reading List Item")
         
         // When

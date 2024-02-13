@@ -6,12 +6,16 @@
 //
 
 import Foundation
+import SwiftData
 
-struct ReadingListItem: Equatable {
-    static func == (lhs: ReadingListItem, rhs: ReadingListItem) -> Bool {
-        lhs.book == rhs.book && lhs.status == rhs.status
-    }
+@Model
+final class ReadingListItem: Equatable {
     
     let book: Book
     let status: ReadingStatus
+    
+    init(book: Book, status: ReadingStatus) {
+        self.book = book
+        self.status = status
+    }
 }
