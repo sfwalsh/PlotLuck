@@ -14,6 +14,7 @@ final class MockReadingListRepository: ReadingListRepository {
     var didAddItemValue: ReadingListItem?
     var removedItemValue: ReadingListItem?
     var fetchItemsValue: [ReadingListItem] = []
+    var updateModelValue: ReadingListUpdateModel?
     var errorValue: Error?
     
     func addItem(_ item: ReadingListItem) async throws {
@@ -21,6 +22,14 @@ final class MockReadingListRepository: ReadingListRepository {
             throw errorValue
         } else {
             self.didAddItemValue = item
+        }
+    }
+    
+    func update(updateModel: ReadingListUpdateModel) async throws {
+        if let errorValue = errorValue {
+            throw errorValue
+        } else {
+            self.updateModelValue = updateModel
         }
     }
     

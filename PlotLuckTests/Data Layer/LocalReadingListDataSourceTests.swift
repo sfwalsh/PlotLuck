@@ -85,6 +85,28 @@ final class LocalReadingListDataSourceTests: XCTestCase {
         XCTAssertFalse(itemsInContext.contains(itemToDelete), "the item should be deleted from the context")
         XCTAssertTrue(itemsInContext.contains(otherItem), "any other object should be unaffected")
     }
+    
+    func testUpdateItem_ReadingStatus() throws {
+        // Given an item is in the context
+        let itemToUpdate = ReadingListItem(
+            book: .init(title: "Item To Update", author: "B", isbn: "2"),
+            status: .unread
+        )
+        try insertItemsDirectlyToContext(items: [
+            itemToUpdate
+        ])
+        
+        // When I call dispatch an update operation to its reading status
+        let updateModel = ReadingListUpdateModel(
+            itemToUpdate: itemToUpdate,
+            updateType: .readingStatus(.inProgress)
+        )
+        try sut.update(updateModel: updateModel)
+        
+        // then the readingStatus is updated
+        let itemsInContext = try fetchItemsDirectlyFromContext()
+        XCTAssertEqual(itemsInContext.first!.status, .inProgress, "the item should have update its readingStatus from the context")
+    }
 }
 
 
