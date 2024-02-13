@@ -18,11 +18,16 @@ struct ReadingListView: View {
     
     var body: some View {
         NavigationStack {
-            List(viewModel.items) { item in
-                VStack(alignment: .leading) {
-                    Text("Test")
-                        .font(.headline)
+            List {
+                ForEach(viewModel.items) { item in
+                    VStack(alignment: .leading) {
+                        Text(item.book.title)
+                            .font(.headline)
+                        Text(item.book.author)
+                            .font(.subheadline)
+                    }
                 }
+                .onDelete(perform: viewModel.didDeleteReadingListItems(at:))
             }
             .navigationTitle("PlotLuck")
             .toolbar {

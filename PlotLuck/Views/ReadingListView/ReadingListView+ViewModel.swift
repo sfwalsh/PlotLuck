@@ -24,6 +24,9 @@ extension ReadingListView {
         @ObservationIgnored
         private let fetchReadingListItems: FetchReadingListItemsUseCase
         
+        @ObservationIgnored
+        private let removeReadingListItemUseCase: RemoveReadingListItemUseCase
+        
         private let errorLogger: ErrorLogger
         
         private(set) var items: [ReadingListItem]
@@ -31,17 +34,25 @@ extension ReadingListView {
         init(
             addReadingListItem: AddReadingListItemUseCase,
             fetchReadingListItems: FetchReadingListItemsUseCase,
+            removeReadingListItemUseCase: RemoveReadingListItemUseCase,
             errorLogger: ErrorLogger
         ) {
             self.addReadingListItem = addReadingListItem
             self.fetchReadingListItems = fetchReadingListItems
+            self.removeReadingListItemUseCase = removeReadingListItemUseCase
+            
             self.items = []
             self.errorLogger = errorLogger
         }
         
         func addSampleData() {
             Task {
-                let book = Book(title: "", author: "", isbn: "")
+                let dummyBooks = [
+                    Book(title: "Crying in H Mart", author: "Michelle Zauner", isbn: "1234567890123"),
+                    Book(title: "Norweigan Wood", author: "Haruki Murakami", isbn: "9781784877996"),
+                    Book(title: "Hyperion", author: "Dan K. Simmons", isbn: "9781784877996"),
+                ]
+                let book = dummyBooks[Int.random(in: 0...dummyBooks.count-1)]
                 let item = ReadingListItem(book: book, status: .unread)
                 let result = await addReadingListItem.execute(for: item)
                 
@@ -67,6 +78,16 @@ extension ReadingListView {
                         catchError(e: error)
                     }
                 }
+            }
+        }
+        
+        func didDeleteReadingListItems(at indexSet: IndexSet) {
+            Task {
+                for index in indexSet {
+                    let item = items[index]
+                    let _ = await removeReadingListItemUseCase.execute(for: item)
+                }
+                refreshData()
             }
         }
         

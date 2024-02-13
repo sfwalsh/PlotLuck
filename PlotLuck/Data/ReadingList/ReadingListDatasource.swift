@@ -10,23 +10,30 @@ import SwiftData
 
 protocol ReadingListDatasource {
     typealias Default = LocalReadingListDatasource
-    func addItem(item: ReadingListItem) throws
+    func addItem(_ item: ReadingListItem) throws
+    func removeItem(_ item: ReadingListItem) throws
     func fetchItems() throws -> [ReadingListItem]
 }
 
 struct LocalReadingListDatasource: ReadingListDatasource {
     private let modelContext: ModelContext
     
+    @MainActor
     init(modelContext: ModelContext) {
         self.modelContext = modelContext
     }
     
-    func addItem(item: ReadingListItem) throws {
+    func addItem(_ item: ReadingListItem) throws {
         modelContext.insert(item)
         try modelContext.save()
     }
     
+    func removeItem(_ item: ReadingListItem) throws {
+        modelContext.delete(item)
+        try modelContext.save()
+    }
+    
     func fetchItems() throws -> [ReadingListItem] {
-        try modelContext.fetch(FetchDescriptor<ReadingListItem>())
+        try modelContext.fetch(FetchDescriptor<ReadingListItem>(sortBy:  [SortDescriptor(\.book.title)]))
     }
 }

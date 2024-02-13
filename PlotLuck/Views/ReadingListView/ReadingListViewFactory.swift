@@ -12,6 +12,7 @@ struct ReadingListViewFactory: ViewFactory {
     typealias RequestValueType = RequestValues
     typealias ViewType = ReadingListView
     
+    @MainActor
     func create(for requestValues: RequestValueType) -> ViewType {
         
         // data layer
@@ -22,6 +23,7 @@ struct ReadingListViewFactory: ViewFactory {
         // use cases
         let addReadingListItemUseCase = AddReadingListItemUseCase(repository: repository)
         let fetchReadingListItemsUseCase = FetchReadingListItemsUseCase(repository: repository)
+        let removeReadingListItemUseCase = RemoveReadingListItemUseCase(repository: repository)
         
         let errorLogger = CrashlyticsLogger()
         
@@ -29,6 +31,7 @@ struct ReadingListViewFactory: ViewFactory {
         let viewModel = ReadingListView.ViewModel(
             addReadingListItem: addReadingListItemUseCase,
             fetchReadingListItems: fetchReadingListItemsUseCase,
+            removeReadingListItemUseCase: removeReadingListItemUseCase,
             errorLogger: errorLogger
         )
         return ReadingListView(viewModel: viewModel)

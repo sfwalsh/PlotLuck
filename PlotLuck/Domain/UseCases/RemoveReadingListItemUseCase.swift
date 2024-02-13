@@ -1,13 +1,13 @@
 //
-//  AddReadingListItemUseCase.swift
+//  RemoveReadingListItemUseCase.swift
 //  PlotLuck
 //
-//  Created by Stephen Walsh on 12/02/2024.
+//  Created by Stephen Walsh on 13/02/2024.
 //
 
 import Foundation
 
-struct AddReadingListItemUseCase: UseCase {
+struct RemoveReadingListItemUseCase: UseCase {
     typealias RequestType = ReadingListItem
     typealias ResponseType = Void
     
@@ -19,7 +19,7 @@ struct AddReadingListItemUseCase: UseCase {
     
     func execute(for request: ReadingListItem) async -> Result<Void, Error> {
         do {
-            try await repository.addItem(request)
+            try await repository.removeItem(request)
             return .success(Void())
         } catch {
             return .failure(error)
