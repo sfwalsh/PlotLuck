@@ -22,6 +22,7 @@ struct ReadingListViewFactory: ViewFactory {
         
         // use cases
         let addReadingListItemUseCase = AddReadingListItemUseCase(repository: repository)
+        let updateReadingListItemUseCase = UpdateReadingListItemUseCase(repository: repository)
         let fetchReadingListItemsUseCase = FetchReadingListItemsUseCase(repository: repository)
         let removeReadingListItemUseCase = RemoveReadingListItemUseCase(repository: repository)
         
@@ -30,6 +31,7 @@ struct ReadingListViewFactory: ViewFactory {
         
         let viewModel = ReadingListView.ViewModel(
             addReadingListItem: addReadingListItemUseCase,
+            updateReadingListItemUseCase: updateReadingListItemUseCase,
             fetchReadingListItems: fetchReadingListItemsUseCase,
             removeReadingListItemUseCase: removeReadingListItemUseCase,
             errorLogger: errorLogger

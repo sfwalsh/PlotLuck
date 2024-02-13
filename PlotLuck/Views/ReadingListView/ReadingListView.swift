@@ -20,14 +20,8 @@ struct ReadingListView: View {
         NavigationStack {
             List {
                 ForEach(viewModel.items) { item in
-                    VStack(alignment: .leading) {
-                        Text(item.book.title)
-                            .font(.headline)
-                        Text(item.book.author)
-                            .font(.subheadline)
-                    }
+                    createReadingListItemCell(for: item)
                 }
-                .onDelete(perform: viewModel.didDeleteReadingListItems(at:))
             }
             .navigationTitle("PlotLuck")
             .toolbar {
@@ -35,6 +29,54 @@ struct ReadingListView: View {
             }
         }.onAppear {
             viewModel.refreshData()
+        }
+    }
+    
+    @ViewBuilder
+    private func createReadingListItemCell(for item: ReadingListItem) -> some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text(item.book.title)
+                .font(.headline)
+            Text(item.book.author)
+                .font(.subheadline)
+            Text(item.status.rawValue.localizedCapitalized)
+                .font(.footnote)
+        }
+        .padding(.vertical, 16)
+        .swipeActions(edge: .trailing) {
+            createDeleteItemButton(for: item)
+            createItemStatusToggleButton(for: item)
+        }
+    }
+    
+    @ViewBuilder
+    private func createDeleteItemButton(for item: ReadingListItem) -> some View {
+        Button(role: .destructive) {
+            viewModel.removeReadingListItem(item)
+        } label: {
+            Label("Delete", systemImage: "trash")
+        }
+    }
+    
+    @ViewBuilder
+    private func createItemStatusToggleButton(for item: ReadingListItem) -> some View {
+        switch item.status {
+        case .inProgress:
+            Button {
+                viewModel.toggleReadingListItemStatus(
+                    item, to: .finished
+                )
+            } label: {
+                Label("Mark Finished", systemImage: "book.closed")
+            }
+        case .unread, .finished:
+            Button {
+                viewModel.toggleReadingListItemStatus(
+                    item, to: .inProgress
+                )
+            } label: {
+                Label("Mark in Progress", systemImage: "book")
+            }
         }
     }
 }
@@ -50,3 +92,4 @@ struct ReadingListView: View {
         fatalError("failed to create in memory model container")
     }
 }
+

@@ -20,7 +20,10 @@ extension ReadingListView {
         // Disables observation tracking of use cases
         @ObservationIgnored
         private let addReadingListItem: AddReadingListItemUseCase
-
+        
+        @ObservationIgnored
+        private let updateReadingListItemUseCase: UpdateReadingListItemUseCase
+        
         @ObservationIgnored
         private let fetchReadingListItems: FetchReadingListItemsUseCase
         
@@ -33,11 +36,13 @@ extension ReadingListView {
         
         init(
             addReadingListItem: AddReadingListItemUseCase,
+            updateReadingListItemUseCase: UpdateReadingListItemUseCase,
             fetchReadingListItems: FetchReadingListItemsUseCase,
             removeReadingListItemUseCase: RemoveReadingListItemUseCase,
             errorLogger: ErrorLogger
         ) {
             self.addReadingListItem = addReadingListItem
+            self.updateReadingListItemUseCase = updateReadingListItemUseCase
             self.fetchReadingListItems = fetchReadingListItems
             self.removeReadingListItemUseCase = removeReadingListItemUseCase
             
@@ -81,12 +86,23 @@ extension ReadingListView {
             }
         }
         
-        func didDeleteReadingListItems(at indexSet: IndexSet) {
+        func removeReadingListItem(_ item: ReadingListItem) {
             Task {
-                for index in indexSet {
-                    let item = items[index]
-                    let _ = await removeReadingListItemUseCase.execute(for: item)
-                }
+                let _ = await removeReadingListItemUseCase.execute(for: item)
+                refreshData()
+            }
+        }
+        
+        func toggleReadingListItemStatus(
+            _ item: ReadingListItem,
+            to status: ReadingStatus
+        ) {
+            Task {
+                let update = ReadingListUpdateModel(
+                    itemToUpdate: item,
+                    updateType: .readingStatus(status)
+                )
+                let _ = await updateReadingListItemUseCase.execute(for: update)
                 refreshData()
             }
         }
