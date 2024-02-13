@@ -22,10 +22,10 @@ struct DefaultReadingListRepository: ReadingListRepository {
     }
     
     func addItem(item: ReadingListItem) async throws {
-        try await datasource.addItem(item: item)
+        try datasource.addItem(item: item)
     }
     
     func fetchItems() async throws -> [ReadingListItem] {
-        try await datasource.fetchItems()
+        try datasource.fetchItems()
     }
 }
