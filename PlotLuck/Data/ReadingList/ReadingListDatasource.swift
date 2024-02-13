@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftData
 
 protocol ReadingListDatasource {
     typealias Default = LocalReadingListDatasource
@@ -13,7 +14,15 @@ protocol ReadingListDatasource {
 }
 
 struct LocalReadingListDatasource: ReadingListDatasource {
+    private let modelContext: ModelContext
+    
+    @MainActor
+    init(modelContext: ModelContext) {
+        self.modelContext = modelContext
+    }
+    
     func addItem(item: ReadingListItem) async throws {
-        
+        modelContext.insert(item)
+        try modelContext.save()
     }
 }

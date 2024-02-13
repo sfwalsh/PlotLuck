@@ -21,6 +21,7 @@
 		C611DF082B7A8E2100F92A18 /* ReadingListDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C611DF072B7A8E2100F92A18 /* ReadingListDatasource.swift */; };
 		C611DF0A2B7A91AC00F92A18 /* MockReadingListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C611DF092B7A91AC00F92A18 /* MockReadingListRepository.swift */; };
 		C6E28A732B7BBBE90033E2B6 /* MockError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E28A722B7BBBE90033E2B6 /* MockError.swift */; };
+		C6E28A772B7BC6120033E2B6 /* LocalReadingListDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E28A762B7BC6120033E2B6 /* LocalReadingListDataSourceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		C611DF072B7A8E2100F92A18 /* ReadingListDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingListDatasource.swift; sourceTree = "<group>"; };
 		C611DF092B7A91AC00F92A18 /* MockReadingListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockReadingListRepository.swift; sourceTree = "<group>"; };
 		C6E28A722B7BBBE90033E2B6 /* MockError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockError.swift; sourceTree = "<group>"; };
+		C6E28A762B7BC6120033E2B6 /* LocalReadingListDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalReadingListDataSourceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,9 +114,9 @@
 		C611DEDA2B7A747200F92A18 /* PlotLuckTests */ = {
 			isa = PBXGroup;
 			children = (
-				C611DEDB2B7A747200F92A18 /* AddReadingListItemUseCaseTests.swift */,
-				C611DF092B7A91AC00F92A18 /* MockReadingListRepository.swift */,
-				C6E28A722B7BBBE90033E2B6 /* MockError.swift */,
+				C6E28A782B7BC6150033E2B6 /* Data Layer */,
+				C6E28A752B7BC57D0033E2B6 /* Domain Layer */,
+				C6E28A742B7BC5760033E2B6 /* Mocks */,
 			);
 			path = PlotLuckTests;
 			sourceTree = "<group>";
@@ -162,6 +164,31 @@
 				C611DF052B7A8A4400F92A18 /* AddReadingListItemUseCase.swift */,
 			);
 			path = UseCases;
+			sourceTree = "<group>";
+		};
+		C6E28A742B7BC5760033E2B6 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				C611DF092B7A91AC00F92A18 /* MockReadingListRepository.swift */,
+				C6E28A722B7BBBE90033E2B6 /* MockError.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		C6E28A752B7BC57D0033E2B6 /* Domain Layer */ = {
+			isa = PBXGroup;
+			children = (
+				C611DEDB2B7A747200F92A18 /* AddReadingListItemUseCaseTests.swift */,
+			);
+			path = "Domain Layer";
+			sourceTree = "<group>";
+		};
+		C6E28A782B7BC6150033E2B6 /* Data Layer */ = {
+			isa = PBXGroup;
+			children = (
+				C6E28A762B7BC6120033E2B6 /* LocalReadingListDataSourceTests.swift */,
+			);
+			path = "Data Layer";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,6 +309,7 @@
 			files = (
 				C611DF0A2B7A91AC00F92A18 /* MockReadingListRepository.swift in Sources */,
 				C6E28A732B7BBBE90033E2B6 /* MockError.swift in Sources */,
+				C6E28A772B7BC6120033E2B6 /* LocalReadingListDataSourceTests.swift in Sources */,
 				C611DEDC2B7A747200F92A18 /* AddReadingListItemUseCaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
