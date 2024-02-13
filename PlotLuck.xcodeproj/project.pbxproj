@@ -21,6 +21,7 @@
 		C611DF0A2B7A91AC00F92A18 /* MockReadingListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C611DF092B7A91AC00F92A18 /* MockReadingListRepository.swift */; };
 		C6DC7C552B7BE346005D23DE /* ErrorLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DC7C542B7BE346005D23DE /* ErrorLogger.swift */; };
 		C6DC7C582B7BE3A9005D23DE /* CrashlyticsLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DC7C572B7BE3A9005D23DE /* CrashlyticsLogger.swift */; };
+		C6DC7C5C2B7BE5CF005D23DE /* FetchReadingListItemsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DC7C5B2B7BE5CF005D23DE /* FetchReadingListItemsUseCase.swift */; };
 		C6E28A732B7BBBE90033E2B6 /* MockError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E28A722B7BBBE90033E2B6 /* MockError.swift */; };
 		C6E28A772B7BC6120033E2B6 /* LocalReadingListDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E28A762B7BC6120033E2B6 /* LocalReadingListDataSourceTests.swift */; };
 		C6E28A7A2B7BCA110033E2B6 /* ReadingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E28A792B7BCA110033E2B6 /* ReadingListView.swift */; };
@@ -56,6 +57,7 @@
 		C611DF092B7A91AC00F92A18 /* MockReadingListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockReadingListRepository.swift; sourceTree = "<group>"; };
 		C6DC7C542B7BE346005D23DE /* ErrorLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorLogger.swift; sourceTree = "<group>"; };
 		C6DC7C572B7BE3A9005D23DE /* CrashlyticsLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashlyticsLogger.swift; sourceTree = "<group>"; };
+		C6DC7C5B2B7BE5CF005D23DE /* FetchReadingListItemsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchReadingListItemsUseCase.swift; sourceTree = "<group>"; };
 		C6E28A722B7BBBE90033E2B6 /* MockError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockError.swift; sourceTree = "<group>"; };
 		C6E28A762B7BC6120033E2B6 /* LocalReadingListDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalReadingListDataSourceTests.swift; sourceTree = "<group>"; };
 		C6E28A792B7BCA110033E2B6 /* ReadingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingListView.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 			children = (
 				C611DF012B7A887700F92A18 /* UseCase.swift */,
 				C611DF052B7A8A4400F92A18 /* AddReadingListItemUseCase.swift */,
+				C6DC7C5B2B7BE5CF005D23DE /* FetchReadingListItemsUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				C611DEFD2B7A874900F92A18 /* ReadingListRepository.swift in Sources */,
 				C6DC7C552B7BE346005D23DE /* ErrorLogger.swift in Sources */,
 				C6E28A7D2B7BCA590033E2B6 /* ReadingListView+ViewModel.swift in Sources */,
+				C6DC7C5C2B7BE5CF005D23DE /* FetchReadingListItemsUseCase.swift in Sources */,
 				C611DEF52B7A7F2500F92A18 /* ReadingListItem.swift in Sources */,
 				C611DF082B7A8E2100F92A18 /* ReadingListDatasource.swift in Sources */,
 				C611DF062B7A8A4400F92A18 /* AddReadingListItemUseCase.swift in Sources */,

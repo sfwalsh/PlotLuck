@@ -13,13 +13,22 @@ struct ReadingListViewFactory: ViewFactory {
     typealias ViewType = ReadingListView
     
     func create(for requestValues: RequestValueType) -> ViewType {
+        
+        // data layer
         let modelContext = requestValues.modelContext
         let datasource = LocalReadingListDatasource(modelContext: modelContext)
         let repository = DefaultReadingListRepository(datasource: datasource)
+        
+        // use cases
         let addReadingListItemUseCase = AddReadingListItemUseCase(repository: repository)
+        let fetchReadingListItemsUseCase = FetchReadingListItemsUseCase(repository: repository)
+        
         let errorLogger = CrashlyticsLogger()
+        
+        
         let viewModel = ReadingListView.ViewModel(
             addReadingListItem: addReadingListItemUseCase,
+            fetchReadingListItems: fetchReadingListItemsUseCase,
             errorLogger: errorLogger
         )
         return ReadingListView(viewModel: viewModel)

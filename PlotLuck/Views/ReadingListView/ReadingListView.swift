@@ -28,6 +28,8 @@ struct ReadingListView: View {
             .toolbar {
                 Button("Add Sample", action: viewModel.addSampleData)
             }
+        }.onAppear {
+            viewModel.refreshData()
         }
     }
 }

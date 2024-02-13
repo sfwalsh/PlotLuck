@@ -11,6 +11,7 @@ import SwiftData
 protocol ReadingListDatasource {
     typealias Default = LocalReadingListDatasource
     func addItem(item: ReadingListItem) async throws
+    func fetchItems() async throws -> [ReadingListItem]
 }
 
 struct LocalReadingListDatasource: ReadingListDatasource {
@@ -24,5 +25,9 @@ struct LocalReadingListDatasource: ReadingListDatasource {
     func addItem(item: ReadingListItem) async throws {
         modelContext.insert(item)
         try modelContext.save()
+    }
+    
+    func fetchItems() async throws -> [ReadingListItem] {
+        try modelContext.fetch(FetchDescriptor<ReadingListItem>())
     }
 }

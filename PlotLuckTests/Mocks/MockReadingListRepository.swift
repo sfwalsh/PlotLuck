@@ -21,4 +21,8 @@ final class MockReadingListRepository: ReadingListRepository {
             self.didAddItemValue = item
         }
     }
+    
+    func fetchItems() async throws -> [ReadingListItem] {
+        []
+    }
 }

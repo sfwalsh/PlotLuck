@@ -17,8 +17,12 @@ extension ReadingListView {
         
         // Use cases
         
+        // Disables observation tracking of use cases
         @ObservationIgnored
         private let addReadingListItem: AddReadingListItemUseCase
+
+        @ObservationIgnored
+        private let fetchReadingListItems: FetchReadingListItemsUseCase
         
         private let errorLogger: ErrorLogger
         
@@ -26,9 +30,11 @@ extension ReadingListView {
         
         init(
             addReadingListItem: AddReadingListItemUseCase,
+            fetchReadingListItems: FetchReadingListItemsUseCase,
             errorLogger: ErrorLogger
         ) {
             self.addReadingListItem = addReadingListItem
+            self.fetchReadingListItems = fetchReadingListItems
             self.items = []
             self.errorLogger = errorLogger
         }
@@ -39,17 +45,34 @@ extension ReadingListView {
                 let item = ReadingListItem(book: book, status: .unread)
                 let result = await addReadingListItem.execute(for: item)
                 
-                switch result {
-                case .success:
-                    break
-                case .failure(let error):
-                    errorLogger.log(for: error)
-                    await MainActor.run {
-                        // TODO: present error to user
+                await MainActor.run {
+                    switch result {
+                    case .success:
+                        refreshData()
+                    case .failure(let error):
+                        catchError(e: error)
                     }
-                    break
                 }
             }
+        }
+        
+        func refreshData() {
+            Task {
+                let result = await fetchReadingListItems.execute()
+                await MainActor.run {
+                    switch result {
+                    case .success(let items):
+                        self.items = items
+                    case .failure(let error):
+                        catchError(e: error)
+                    }
+                }
+            }
+        }
+        
+        private func catchError(e: Error) {
+            errorLogger.log(for: e)
+            // TODO: present error to user
         }
     }
 }
