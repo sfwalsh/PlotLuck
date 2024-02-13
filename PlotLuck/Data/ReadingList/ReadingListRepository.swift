@@ -9,7 +9,8 @@ import Foundation
 
 protocol ReadingListRepository {
     typealias Default = DefaultReadingListRepository
-    func addItem(item: ReadingListItem) async throws
+    func addItem(_ item: ReadingListItem) async throws
+    func removeItem(_ item: ReadingListItem) async throws
     func fetchItems() async throws -> [ReadingListItem]
 }
 
@@ -21,8 +22,12 @@ struct DefaultReadingListRepository: ReadingListRepository {
         self.datasource = datasource
     }
     
-    func addItem(item: ReadingListItem) async throws {
-        try datasource.addItem(item: item)
+    func addItem(_ item: ReadingListItem) async throws {
+        try datasource.addItem(item)
+    }
+    
+    func removeItem(_ item: ReadingListItem) async throws {
+        try datasource.removeItem(item)
     }
     
     func fetchItems() async throws -> [ReadingListItem] {

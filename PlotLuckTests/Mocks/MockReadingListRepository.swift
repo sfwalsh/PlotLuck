@@ -12,14 +12,23 @@ import Foundation
 final class MockReadingListRepository: ReadingListRepository {
     
     var didAddItemValue: ReadingListItem?
+    var removedItemValue: ReadingListItem?
     var fetchItemsValue: [ReadingListItem] = []
     var errorValue: Error?
     
-    func addItem(item: ReadingListItem) async throws {
+    func addItem(_ item: ReadingListItem) async throws {
         if let errorValue = errorValue {
             throw errorValue
         } else {
             self.didAddItemValue = item
+        }
+    }
+    
+    func removeItem(_ item: ReadingListItem) async throws {
+        if let errorValue = errorValue {
+            throw errorValue
+        } else {
+            self.removedItemValue = item
         }
     }
     

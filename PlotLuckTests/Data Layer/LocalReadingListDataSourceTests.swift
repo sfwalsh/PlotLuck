@@ -23,14 +23,14 @@ final class LocalReadingListDataSourceTests: XCTestCase {
         modelContext = modelContainer?.mainContext
         sut = LocalReadingListDatasource(modelContext: modelContext!)
     }
-
+    
     func testAddItem_Success() throws {
         // When I add an item
         let item = ReadingListItem(
             book: .init(title: "", author: "", isbn: ""),
             status: .unread
         )
-        try sut.addItem(item: item)
+        try sut.addItem(item)
         let itemsInContext = try fetchItemsDirectlyFromContext()
         
         // Then
@@ -52,13 +52,38 @@ final class LocalReadingListDataSourceTests: XCTestCase {
             book: .init(title: "", author: "", isbn: ""),
             status: .unread
         )
-        try insertItemDirectlyToContext(item: item)
+        try insertItemsDirectlyToContext(items: [item])
         
         // When I call fetch
         let results = try sut.fetchItems()
         
         // then that item is included in the returned results
         XCTAssertEqual(results.first!, item, "The inserted item and the only returned item should be equal")
+    }
+    
+    func testDeleteItem() throws {
+        // Given an item is in the context
+        let itemToDelete = ReadingListItem(
+            book: .init(title: "Item To Delete", author: "A", isbn: "1"),
+            status: .unread
+        )
+        let otherItem = ReadingListItem(
+            book: .init(title: "Other Item", author: "A", isbn: "1"),
+            status: .unread
+        )
+        
+        try insertItemsDirectlyToContext(items: [
+            itemToDelete,
+            otherItem
+        ])
+        
+        // When I call remove
+        try sut.removeItem(itemToDelete)
+        
+        // then only that item is removed from the model context
+        let itemsInContext = try fetchItemsDirectlyFromContext()
+        XCTAssertFalse(itemsInContext.contains(itemToDelete), "the item should be deleted from the context")
+        XCTAssertTrue(itemsInContext.contains(otherItem), "any other object should be unaffected")
     }
 }
 
@@ -72,8 +97,10 @@ extension LocalReadingListDataSourceTests {
         return try modelContext!.fetch(descriptor)
     }
     
-    private func insertItemDirectlyToContext(item: ReadingListItem) throws {
-        modelContext?.insert(item)
+    private func insertItemsDirectlyToContext(items: [ReadingListItem]) throws {
+        for item in items {
+            modelContext?.insert(item)
+        }
         try modelContext?.save()
     }
 }
