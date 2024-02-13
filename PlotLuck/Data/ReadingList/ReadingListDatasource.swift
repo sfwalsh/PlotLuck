@@ -16,7 +16,7 @@ protocol ReadingListDatasource {
 struct LocalReadingListDatasource: ReadingListDatasource {
     private let modelContext: ModelContext
     
-    @MainActor
+//    @MainActor
     init(modelContext: ModelContext) {
         self.modelContext = modelContext
     }

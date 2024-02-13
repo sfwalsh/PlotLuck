@@ -6,12 +6,24 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct PlotLuckApp: App {
+    private let modelContainer: ModelContainer
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ReadingListViewFactory()
+                .create(for: .init(modelContext: modelContainer.mainContext))
+        }
+    }
+    
+    init() {
+        do {
+            modelContainer = try ModelContainer(for: ReadingListItem.self, Book.self)
+        } catch {
+            fatalError("Failed to create ModelContainer.")
         }
     }
 }
