@@ -7,7 +7,11 @@
 
 import Foundation
 
-struct ReadingListItem {
+struct ReadingListItem: Equatable {
+    static func == (lhs: ReadingListItem, rhs: ReadingListItem) -> Bool {
+        lhs.book == rhs.book && lhs.status == rhs.status
+    }
+    
     let book: Book
     let status: ReadingStatus
 }

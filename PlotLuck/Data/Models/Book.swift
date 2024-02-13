@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct Book {
+struct Book: Equatable {
     let title, author, isbn: String
 }

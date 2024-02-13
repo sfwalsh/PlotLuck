@@ -7,6 +7,6 @@
 
 import Foundation
 
-enum ReadingStatus {
+enum ReadingStatus: Equatable {
     case unread, inProgress, finished
 }
