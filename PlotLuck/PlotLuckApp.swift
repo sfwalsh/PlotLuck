@@ -14,8 +14,10 @@ struct PlotLuckApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ReadingListViewFactory()
-                .create(for: .init(modelContext: modelContainer.mainContext))
+            NavigationStack {
+                ReadingListViewFactory()
+                    .create(for: .init(modelContext: modelContainer.mainContext))
+            }
         }
     }
     
@@ -25,5 +27,25 @@ struct PlotLuckApp: App {
         } catch {
             fatalError("Failed to create ModelContainer.")
         }
+        styleNavigationBarAppearance()
+    }
+    
+    private func styleNavigationBarAppearance() {
+        
+        guard let fontDescriptor = UIFontDescriptor
+            .preferredFontDescriptor(withTextStyle: .largeTitle)
+            .withDesign(.serif) else { return }
+
+        let appearance = UINavigationBarAppearance()
+        let font = UIFont.init(descriptor: fontDescriptor, size: 36)
+        
+        let attributes: [NSAttributedString.Key: Any] = [
+            .font: font
+        ]
+
+        appearance.largeTitleTextAttributes = attributes
+        UINavigationBar.appearance().standardAppearance = appearance
+        UINavigationBar.appearance().compactAppearance = appearance
+        UINavigationBar.appearance().scrollEdgeAppearance = appearance
     }
 }

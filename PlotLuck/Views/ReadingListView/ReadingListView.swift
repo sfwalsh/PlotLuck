@@ -17,35 +17,26 @@ struct ReadingListView: View {
     }
     
     var body: some View {
-        NavigationStack {
-            List {
-                ForEach(viewModel.items) { item in
-                    createReadingListItemCell(for: item)
+        List {
+            ForEach(viewModel.items) { item in
+                ReadingListItemCell(
+                    titleText: item.book.title,
+                    subtitleText: item.book.author,
+                    footnoteText: item.status.localizedDescription
+                )
+                .swipeActions(edge: .trailing) {
+                    createDeleteItemButton(for: item)
+                    createItemStatusToggleButton(for: item)
                 }
             }
-            .navigationTitle("PlotLuck")
-            .toolbar {
-                Button("Add Sample", action: viewModel.addSampleData)
-            }
-        }.onAppear {
+        }
+        .listStyle(.inset)
+        .navigationTitle("PlotLuck")
+        .toolbar {
+            Button("Add Sample", action: viewModel.addSampleData)
+        }
+        .onAppear {
             viewModel.refreshData()
-        }
-    }
-    
-    @ViewBuilder
-    private func createReadingListItemCell(for item: ReadingListItem) -> some View {
-        VStack(alignment: .leading, spacing: 8) {
-            Text(item.book.title)
-                .font(.headline)
-            Text(item.book.author)
-                .font(.subheadline)
-            Text(item.status.rawValue.localizedCapitalized)
-                .font(.footnote)
-        }
-        .padding(.vertical, 16)
-        .swipeActions(edge: .trailing) {
-            createDeleteItemButton(for: item)
-            createItemStatusToggleButton(for: item)
         }
     }
     
@@ -87,7 +78,9 @@ struct ReadingListView: View {
         let modelContainer = try ModelContainer(for: ReadingListItem.self, Book.self, configurations: config)
         
         let factory = ReadingListViewFactory()
-        return factory.create(for: .init(modelContext: modelContainer.mainContext))
+        return NavigationStack {
+            factory.create(for: .init(modelContext: modelContainer.mainContext))
+        }
     } catch {
         fatalError("failed to create in memory model container")
     }
