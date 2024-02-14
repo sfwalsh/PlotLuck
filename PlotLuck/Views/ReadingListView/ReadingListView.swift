@@ -11,6 +11,7 @@ import SwiftData
 struct ReadingListView: View {
     
     @State private var viewModel: ViewModel
+    @State private var showingBookSearchView = false
     
     init(viewModel: ViewModel) {
         _viewModel = State(initialValue: viewModel)
@@ -34,6 +35,14 @@ struct ReadingListView: View {
         .navigationTitle("PlotLuck")
         .toolbar {
             Button("Add Sample", action: viewModel.addSampleData)
+            Button {
+                showingBookSearchView.toggle()
+            } label: {
+                Image(systemName: "plus")
+            }
+            .sheet(isPresented: $showingBookSearchView) {
+                BookSearchViewFactory().create(for: .init())
+            }
         }
         .onAppear {
             viewModel.refreshData()
@@ -70,6 +79,8 @@ struct ReadingListView: View {
             }
         }
     }
+    
+    
 }
 
 #Preview {

@@ -22,6 +22,8 @@
 		C620168F2B7C157A0027BCBB /* UpdateReadingListItemUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C620168E2B7C157A0027BCBB /* UpdateReadingListItemUseCase.swift */; };
 		C62016912B7C1AD00027BCBB /* ReadingListItemUpdateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62016902B7C1AD00027BCBB /* ReadingListItemUpdateModel.swift */; };
 		C62016932B7C1C9E0027BCBB /* UpdateReadingListItemUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62016922B7C1C9E0027BCBB /* UpdateReadingListItemUseCaseTests.swift */; };
+		C65F5CA42B7D1D6000C20B51 /* BookSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F5CA32B7D1D6000C20B51 /* BookSearchView.swift */; };
+		C65F5CA62B7D1D7800C20B51 /* BookSearchFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F5CA52B7D1D7800C20B51 /* BookSearchFactory.swift */; };
 		C6921C112B7C51F0005C9943 /* ReadingListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6921C102B7C51F0005C9943 /* ReadingListItemCell.swift */; };
 		C6DC7C552B7BE346005D23DE /* ErrorLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DC7C542B7BE346005D23DE /* ErrorLogger.swift */; };
 		C6DC7C582B7BE3A9005D23DE /* CrashlyticsLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DC7C572B7BE3A9005D23DE /* CrashlyticsLogger.swift */; };
@@ -65,6 +67,8 @@
 		C620168E2B7C157A0027BCBB /* UpdateReadingListItemUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateReadingListItemUseCase.swift; sourceTree = "<group>"; };
 		C62016902B7C1AD00027BCBB /* ReadingListItemUpdateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingListItemUpdateModel.swift; sourceTree = "<group>"; };
 		C62016922B7C1C9E0027BCBB /* UpdateReadingListItemUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateReadingListItemUseCaseTests.swift; sourceTree = "<group>"; };
+		C65F5CA32B7D1D6000C20B51 /* BookSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchView.swift; sourceTree = "<group>"; };
+		C65F5CA52B7D1D7800C20B51 /* BookSearchFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchFactory.swift; sourceTree = "<group>"; };
 		C6921C102B7C51F0005C9943 /* ReadingListItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingListItemCell.swift; sourceTree = "<group>"; };
 		C6DC7C542B7BE346005D23DE /* ErrorLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorLogger.swift; sourceTree = "<group>"; };
 		C6DC7C572B7BE3A9005D23DE /* CrashlyticsLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashlyticsLogger.swift; sourceTree = "<group>"; };
@@ -197,6 +201,15 @@
 			path = UseCases;
 			sourceTree = "<group>";
 		};
+		C65F5CA72B7D1D8B00C20B51 /* BookSearchView */ = {
+			isa = PBXGroup;
+			children = (
+				C65F5CA32B7D1D6000C20B51 /* BookSearchView.swift */,
+				C65F5CA52B7D1D7800C20B51 /* BookSearchFactory.swift */,
+			);
+			path = BookSearchView;
+			sourceTree = "<group>";
+		};
 		C6DC7C562B7BE397005D23DE /* LoggerServices */ = {
 			isa = PBXGroup;
 			children = (
@@ -238,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				C6E28A802B7BCE180033E2B6 /* ViewFactory.swift */,
+				C65F5CA72B7D1D8B00C20B51 /* BookSearchView */,
 				C6E28A822B7BCEA50033E2B6 /* ReadingListView */,
 			);
 			path = Views;
@@ -361,6 +375,7 @@
 				C611DF022B7A887700F92A18 /* UseCase.swift in Sources */,
 				C611DEFD2B7A874900F92A18 /* ReadingListRepository.swift in Sources */,
 				C620168F2B7C157A0027BCBB /* UpdateReadingListItemUseCase.swift in Sources */,
+				C65F5CA42B7D1D6000C20B51 /* BookSearchView.swift in Sources */,
 				C6DC7C552B7BE346005D23DE /* ErrorLogger.swift in Sources */,
 				C6E28A7D2B7BCA590033E2B6 /* ReadingListView+ViewModel.swift in Sources */,
 				C6DC7C5C2B7BE5CF005D23DE /* FetchReadingListItemsUseCase.swift in Sources */,
@@ -372,6 +387,7 @@
 				C62016912B7C1AD00027BCBB /* ReadingListItemUpdateModel.swift in Sources */,
 				C6DC7C602B7BF761005D23DE /* RemoveReadingListItemUseCase.swift in Sources */,
 				C6E28A7A2B7BCA110033E2B6 /* ReadingListView.swift in Sources */,
+				C65F5CA62B7D1D7800C20B51 /* BookSearchFactory.swift in Sources */,
 				C611DECB2B7A747000F92A18 /* PlotLuckApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
