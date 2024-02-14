@@ -10,6 +10,8 @@ import SwiftData
 
 struct ReadingListView: View {
     
+    @Environment(\.modelContext) var modelContext
+    
     @State private var viewModel: ViewModel
     @State private var showingBookSearchView = false
     
@@ -37,9 +39,12 @@ struct ReadingListView: View {
                 Image(systemName: "plus")
             }
             .sheet(isPresented: $showingBookSearchView) {
-                BookSearchViewFactory().create(for: .init())
+                BookSearchViewFactory().create(for: .init(modelContext: modelContext))
             }
         }
+        .onChange(of: showingBookSearchView, { oldValue, newValue in
+            viewModel.refreshData()
+        })
         .onAppear {
             viewModel.refreshData()
         }

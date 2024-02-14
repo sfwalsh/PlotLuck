@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct BookSearchView: View {
     
@@ -29,6 +30,11 @@ struct BookSearchView: View {
                 text: $viewModel.searchText,
                 placement: .navigationBarDrawer(displayMode:.always)
             )
+            .onReceive(viewModel.viewDismissalPublisher) { shouldDismiss in
+                if shouldDismiss {
+                    dismiss()
+                }
+            }
             .onSubmit(of: .search) {
                 viewModel.performSearch()
             }
@@ -56,7 +62,6 @@ struct BookSearchView: View {
                     result,
                     readingStatus: .unread
                 )
-                dismiss()
             } label: {
                 Text("Add \(Image(systemName: "plus"))")
             }.buttonStyle(.borderedProminent)
@@ -65,5 +70,16 @@ struct BookSearchView: View {
 }
 
 #Preview {
-    BookSearchViewFactory().create(for: .init())
+    do {
+        let config = ModelConfiguration(isStoredInMemoryOnly: true)
+        let modelContainer = try ModelContainer(for: ReadingListItem.self, Book.self, configurations: config)
+        
+        let factory = BookSearchViewFactory()
+        return NavigationStack {
+            factory
+                .create(for: .init(modelContext: modelContainer.mainContext))
+        }
+    } catch {
+        fatalError("failed to create in memory model container")
+    }
 }
