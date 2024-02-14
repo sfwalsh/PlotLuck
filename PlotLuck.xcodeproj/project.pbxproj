@@ -24,7 +24,7 @@
 		C62016932B7C1C9E0027BCBB /* UpdateReadingListItemUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62016922B7C1C9E0027BCBB /* UpdateReadingListItemUseCaseTests.swift */; };
 		C65F5CA42B7D1D6000C20B51 /* BookSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F5CA32B7D1D6000C20B51 /* BookSearchView.swift */; };
 		C65F5CA62B7D1D7800C20B51 /* BookSearchFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F5CA52B7D1D7800C20B51 /* BookSearchFactory.swift */; };
-		C6921C112B7C51F0005C9943 /* ReadingListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6921C102B7C51F0005C9943 /* ReadingListItemCell.swift */; };
+		C6921C112B7C51F0005C9943 /* ListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6921C102B7C51F0005C9943 /* ListItemCell.swift */; };
 		C6DC7C552B7BE346005D23DE /* ErrorLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DC7C542B7BE346005D23DE /* ErrorLogger.swift */; };
 		C6DC7C582B7BE3A9005D23DE /* CrashlyticsLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DC7C572B7BE3A9005D23DE /* CrashlyticsLogger.swift */; };
 		C6DC7C5C2B7BE5CF005D23DE /* FetchReadingListItemsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DC7C5B2B7BE5CF005D23DE /* FetchReadingListItemsUseCase.swift */; };
@@ -69,7 +69,7 @@
 		C62016922B7C1C9E0027BCBB /* UpdateReadingListItemUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateReadingListItemUseCaseTests.swift; sourceTree = "<group>"; };
 		C65F5CA32B7D1D6000C20B51 /* BookSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchView.swift; sourceTree = "<group>"; };
 		C65F5CA52B7D1D7800C20B51 /* BookSearchFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchFactory.swift; sourceTree = "<group>"; };
-		C6921C102B7C51F0005C9943 /* ReadingListItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingListItemCell.swift; sourceTree = "<group>"; };
+		C6921C102B7C51F0005C9943 /* ListItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemCell.swift; sourceTree = "<group>"; };
 		C6DC7C542B7BE346005D23DE /* ErrorLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorLogger.swift; sourceTree = "<group>"; };
 		C6DC7C572B7BE3A9005D23DE /* CrashlyticsLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashlyticsLogger.swift; sourceTree = "<group>"; };
 		C6DC7C5B2B7BE5CF005D23DE /* FetchReadingListItemsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchReadingListItemsUseCase.swift; sourceTree = "<group>"; };
@@ -210,6 +210,14 @@
 			path = BookSearchView;
 			sourceTree = "<group>";
 		};
+		C65F5CA82B7D1FF200C20B51 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				C6921C102B7C51F0005C9943 /* ListItemCell.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		C6DC7C562B7BE397005D23DE /* LoggerServices */ = {
 			isa = PBXGroup;
 			children = (
@@ -251,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				C6E28A802B7BCE180033E2B6 /* ViewFactory.swift */,
+				C65F5CA82B7D1FF200C20B51 /* Shared */,
 				C65F5CA72B7D1D8B00C20B51 /* BookSearchView */,
 				C6E28A822B7BCEA50033E2B6 /* ReadingListView */,
 			);
@@ -262,7 +271,6 @@
 			children = (
 				C6E28A832B7BCED30033E2B6 /* ReadingListViewFactory.swift */,
 				C6E28A792B7BCA110033E2B6 /* ReadingListView.swift */,
-				C6921C102B7C51F0005C9943 /* ReadingListItemCell.swift */,
 				C6E28A7C2B7BCA590033E2B6 /* ReadingListView+ViewModel.swift */,
 			);
 			path = ReadingListView;
@@ -368,7 +376,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C6921C112B7C51F0005C9943 /* ReadingListItemCell.swift in Sources */,
+				C6921C112B7C51F0005C9943 /* ListItemCell.swift in Sources */,
 				C6E28A842B7BCED30033E2B6 /* ReadingListViewFactory.swift in Sources */,
 				C611DEF82B7A7F4F00F92A18 /* Book.swift in Sources */,
 				C6DC7C582B7BE3A9005D23DE /* CrashlyticsLogger.swift in Sources */,

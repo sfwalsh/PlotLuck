@@ -1,5 +1,5 @@
 //
-//  ReadingListItemCell.swift
+//  ListItemCell.swift
 //  PlotLuck
 //
 //  Created by Stephen Walsh on 14/02/2024.
@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct ReadingListItemCell: View {
+struct ListItemCell: View {
     
     let titleText: String
     let subtitleText: String
-    let footnoteText: String
+    let footnoteText: String?
     
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
@@ -34,9 +34,11 @@ struct ReadingListItemCell: View {
                     
                     Spacer()
                     
-                    Text(footnoteText)
-                        .font(.footnote)
-                        .opacity(0.8)
+                    if let footnoteText = footnoteText {
+                        Text(footnoteText)
+                            .font(.footnote)
+                            .opacity(0.8)
+                    }
                 }
                 .padding(.vertical, 6)
             }
@@ -56,7 +58,7 @@ struct ReadingListItemCell: View {
 
 #Preview {
     List {
-        ReadingListItemCell(
+        ListItemCell(
             titleText: "Circe",
             subtitleText: "Madeline Miller",
             footnoteText: "Unread"

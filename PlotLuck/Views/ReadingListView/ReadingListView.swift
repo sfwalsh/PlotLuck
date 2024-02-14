@@ -20,7 +20,7 @@ struct ReadingListView: View {
     var body: some View {
         List {
             ForEach(viewModel.items) { item in
-                ReadingListItemCell(
+                ListItemCell(
                     titleText: item.book.title,
                     subtitleText: item.book.author,
                     footnoteText: item.status.localizedDescription
