@@ -29,6 +29,8 @@
 		C65F5CAF2B7D244B00C20B51 /* GoogleBookSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F5CAE2B7D244B00C20B51 /* GoogleBookSearchResult.swift */; };
 		C65F5CB12B7D273E00C20B51 /* BookSearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F5CB02B7D273E00C20B51 /* BookSearchRepository.swift */; };
 		C65F5CB42B7D284500C20B51 /* FetchBooksUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F5CB32B7D284500C20B51 /* FetchBooksUseCase.swift */; };
+		C65F5CB92B7D490B00C20B51 /* FetchBooksUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F5CB82B7D490B00C20B51 /* FetchBooksUseCaseTests.swift */; };
+		C65F5CBC2B7D493F00C20B51 /* MockBookSearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F5CBB2B7D493F00C20B51 /* MockBookSearchRepository.swift */; };
 		C6921C112B7C51F0005C9943 /* ListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6921C102B7C51F0005C9943 /* ListItemCell.swift */; };
 		C6DC7C552B7BE346005D23DE /* ErrorLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DC7C542B7BE346005D23DE /* ErrorLogger.swift */; };
 		C6DC7C582B7BE3A9005D23DE /* CrashlyticsLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DC7C572B7BE3A9005D23DE /* CrashlyticsLogger.swift */; };
@@ -79,6 +81,8 @@
 		C65F5CAE2B7D244B00C20B51 /* GoogleBookSearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleBookSearchResult.swift; sourceTree = "<group>"; };
 		C65F5CB02B7D273E00C20B51 /* BookSearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchRepository.swift; sourceTree = "<group>"; };
 		C65F5CB32B7D284500C20B51 /* FetchBooksUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchBooksUseCase.swift; sourceTree = "<group>"; };
+		C65F5CB82B7D490B00C20B51 /* FetchBooksUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchBooksUseCaseTests.swift; sourceTree = "<group>"; };
+		C65F5CBB2B7D493F00C20B51 /* MockBookSearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockBookSearchRepository.swift; sourceTree = "<group>"; };
 		C6921C102B7C51F0005C9943 /* ListItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemCell.swift; sourceTree = "<group>"; };
 		C6DC7C542B7BE346005D23DE /* ErrorLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorLogger.swift; sourceTree = "<group>"; };
 		C6DC7C572B7BE3A9005D23DE /* CrashlyticsLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashlyticsLogger.swift; sourceTree = "<group>"; };
@@ -207,7 +211,7 @@
 			children = (
 				C611DF012B7A887700F92A18 /* UseCase.swift */,
 				C65F5CB62B7D2DFF00C20B51 /* BookSearch */,
-				C65F5CB22B7D281000C20B51 /* ReadingListItem */,
+				C65F5CB22B7D281000C20B51 /* ReadingList */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -238,7 +242,7 @@
 			path = API;
 			sourceTree = "<group>";
 		};
-		C65F5CB22B7D281000C20B51 /* ReadingListItem */ = {
+		C65F5CB22B7D281000C20B51 /* ReadingList */ = {
 			isa = PBXGroup;
 			children = (
 				C611DF052B7A8A4400F92A18 /* AddReadingListItemUseCase.swift */,
@@ -246,7 +250,7 @@
 				C620168E2B7C157A0027BCBB /* UpdateReadingListItemUseCase.swift */,
 				C6DC7C5B2B7BE5CF005D23DE /* FetchReadingListItemsUseCase.swift */,
 			);
-			path = ReadingListItem;
+			path = ReadingList;
 			sourceTree = "<group>";
 		};
 		C65F5CB52B7D28E300C20B51 /* BookSearch */ = {
@@ -265,6 +269,25 @@
 			path = BookSearch;
 			sourceTree = "<group>";
 		};
+		C65F5CB72B7D48E500C20B51 /* ReadingList */ = {
+			isa = PBXGroup;
+			children = (
+				C611DEDB2B7A747200F92A18 /* AddReadingListItemUseCaseTests.swift */,
+				C62016922B7C1C9E0027BCBB /* UpdateReadingListItemUseCaseTests.swift */,
+				C6DC7C612B7BF9F2005D23DE /* RemoveReadingListItemUseCaseTests.swift */,
+				C6DC7C5D2B7BEEC7005D23DE /* FetchReadingListItemsUseCaseTests.swift */,
+			);
+			path = ReadingList;
+			sourceTree = "<group>";
+		};
+		C65F5CBA2B7D491100C20B51 /* BookSearch */ = {
+			isa = PBXGroup;
+			children = (
+				C65F5CB82B7D490B00C20B51 /* FetchBooksUseCaseTests.swift */,
+			);
+			path = BookSearch;
+			sourceTree = "<group>";
+		};
 		C6DC7C562B7BE397005D23DE /* LoggerServices */ = {
 			isa = PBXGroup;
 			children = (
@@ -278,6 +301,7 @@
 			isa = PBXGroup;
 			children = (
 				C611DF092B7A91AC00F92A18 /* MockReadingListRepository.swift */,
+				C65F5CBB2B7D493F00C20B51 /* MockBookSearchRepository.swift */,
 				C6E28A722B7BBBE90033E2B6 /* MockError.swift */,
 			);
 			path = Mocks;
@@ -286,10 +310,8 @@
 		C6E28A752B7BC57D0033E2B6 /* Domain Layer */ = {
 			isa = PBXGroup;
 			children = (
-				C611DEDB2B7A747200F92A18 /* AddReadingListItemUseCaseTests.swift */,
-				C62016922B7C1C9E0027BCBB /* UpdateReadingListItemUseCaseTests.swift */,
-				C6DC7C612B7BF9F2005D23DE /* RemoveReadingListItemUseCaseTests.swift */,
-				C6DC7C5D2B7BEEC7005D23DE /* FetchReadingListItemsUseCaseTests.swift */,
+				C65F5CBA2B7D491100C20B51 /* BookSearch */,
+				C65F5CB72B7D48E500C20B51 /* ReadingList */,
 			);
 			path = "Domain Layer";
 			sourceTree = "<group>";
@@ -459,9 +481,11 @@
 				C611DF0A2B7A91AC00F92A18 /* MockReadingListRepository.swift in Sources */,
 				C6DC7C5E2B7BEEC7005D23DE /* FetchReadingListItemsUseCaseTests.swift in Sources */,
 				C6E28A732B7BBBE90033E2B6 /* MockError.swift in Sources */,
+				C65F5CB92B7D490B00C20B51 /* FetchBooksUseCaseTests.swift in Sources */,
 				C62016932B7C1C9E0027BCBB /* UpdateReadingListItemUseCaseTests.swift in Sources */,
 				C6DC7C622B7BF9F2005D23DE /* RemoveReadingListItemUseCaseTests.swift in Sources */,
 				C6E28A772B7BC6120033E2B6 /* LocalReadingListDataSourceTests.swift in Sources */,
+				C65F5CBC2B7D493F00C20B51 /* MockBookSearchRepository.swift in Sources */,
 				C611DEDC2B7A747200F92A18 /* AddReadingListItemUseCaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

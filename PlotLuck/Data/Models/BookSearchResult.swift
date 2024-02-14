@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct BookSearchResult: Identifiable {
+struct BookSearchResult: Identifiable, Equatable {
     var id: String {
         isbn
     }
