@@ -12,7 +12,15 @@ struct BookSearchViewFactory: ViewFactory {
     typealias ViewType = BookSearchView
     
     func create(for requestValue: RequestValues) -> BookSearchView {
-        BookSearchView()
+        let repository = GoogleBookSearchRepository()
+        let fetchBooksUseCase = FetchBooksUseCase(repository: repository)
+        let errorLogger = CrashlyticsLogger()
+        
+        let viewModel = BookSearchView.ViewModel(
+            fetchBooksUseCase: fetchBooksUseCase,
+            errorLogger: errorLogger
+        )
+        return BookSearchView(viewModel: viewModel)
     }
     
     struct RequestValues {

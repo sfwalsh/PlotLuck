@@ -24,6 +24,11 @@
 		C62016932B7C1C9E0027BCBB /* UpdateReadingListItemUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62016922B7C1C9E0027BCBB /* UpdateReadingListItemUseCaseTests.swift */; };
 		C65F5CA42B7D1D6000C20B51 /* BookSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F5CA32B7D1D6000C20B51 /* BookSearchView.swift */; };
 		C65F5CA62B7D1D7800C20B51 /* BookSearchFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F5CA52B7D1D7800C20B51 /* BookSearchFactory.swift */; };
+		C65F5CAA2B7D220200C20B51 /* BookSearchView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F5CA92B7D220200C20B51 /* BookSearchView+ViewModel.swift */; };
+		C65F5CAC2B7D23F900C20B51 /* BookSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F5CAB2B7D23F900C20B51 /* BookSearchResult.swift */; };
+		C65F5CAF2B7D244B00C20B51 /* GoogleBookSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F5CAE2B7D244B00C20B51 /* GoogleBookSearchResult.swift */; };
+		C65F5CB12B7D273E00C20B51 /* BookSearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F5CB02B7D273E00C20B51 /* BookSearchRepository.swift */; };
+		C65F5CB42B7D284500C20B51 /* FetchBooksUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F5CB32B7D284500C20B51 /* FetchBooksUseCase.swift */; };
 		C6921C112B7C51F0005C9943 /* ListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6921C102B7C51F0005C9943 /* ListItemCell.swift */; };
 		C6DC7C552B7BE346005D23DE /* ErrorLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DC7C542B7BE346005D23DE /* ErrorLogger.swift */; };
 		C6DC7C582B7BE3A9005D23DE /* CrashlyticsLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DC7C572B7BE3A9005D23DE /* CrashlyticsLogger.swift */; };
@@ -69,6 +74,11 @@
 		C62016922B7C1C9E0027BCBB /* UpdateReadingListItemUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateReadingListItemUseCaseTests.swift; sourceTree = "<group>"; };
 		C65F5CA32B7D1D6000C20B51 /* BookSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchView.swift; sourceTree = "<group>"; };
 		C65F5CA52B7D1D7800C20B51 /* BookSearchFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchFactory.swift; sourceTree = "<group>"; };
+		C65F5CA92B7D220200C20B51 /* BookSearchView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BookSearchView+ViewModel.swift"; sourceTree = "<group>"; };
+		C65F5CAB2B7D23F900C20B51 /* BookSearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchResult.swift; sourceTree = "<group>"; };
+		C65F5CAE2B7D244B00C20B51 /* GoogleBookSearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleBookSearchResult.swift; sourceTree = "<group>"; };
+		C65F5CB02B7D273E00C20B51 /* BookSearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchRepository.swift; sourceTree = "<group>"; };
+		C65F5CB32B7D284500C20B51 /* FetchBooksUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchBooksUseCase.swift; sourceTree = "<group>"; };
 		C6921C102B7C51F0005C9943 /* ListItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemCell.swift; sourceTree = "<group>"; };
 		C6DC7C542B7BE346005D23DE /* ErrorLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorLogger.swift; sourceTree = "<group>"; };
 		C6DC7C572B7BE3A9005D23DE /* CrashlyticsLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashlyticsLogger.swift; sourceTree = "<group>"; };
@@ -154,6 +164,7 @@
 		C611DEF62B7A7F3000F92A18 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				C65F5CB52B7D28E300C20B51 /* BookSearch */,
 				C611DF002B7A885600F92A18 /* ReadingList */,
 				C611DEFB2B7A86B600F92A18 /* Models */,
 			);
@@ -166,6 +177,8 @@
 				C611DEF42B7A7F2500F92A18 /* ReadingListItem.swift */,
 				C611DEF72B7A7F4F00F92A18 /* Book.swift */,
 				C611DEF92B7A7F5900F92A18 /* ReadingStatus.swift */,
+				C65F5CAB2B7D23F900C20B51 /* BookSearchResult.swift */,
+				C65F5CAD2B7D243B00C20B51 /* API */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -193,10 +206,8 @@
 			isa = PBXGroup;
 			children = (
 				C611DF012B7A887700F92A18 /* UseCase.swift */,
-				C611DF052B7A8A4400F92A18 /* AddReadingListItemUseCase.swift */,
-				C6DC7C5F2B7BF761005D23DE /* RemoveReadingListItemUseCase.swift */,
-				C620168E2B7C157A0027BCBB /* UpdateReadingListItemUseCase.swift */,
-				C6DC7C5B2B7BE5CF005D23DE /* FetchReadingListItemsUseCase.swift */,
+				C65F5CB62B7D2DFF00C20B51 /* BookSearch */,
+				C65F5CB22B7D281000C20B51 /* ReadingListItem */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -204,8 +215,9 @@
 		C65F5CA72B7D1D8B00C20B51 /* BookSearchView */ = {
 			isa = PBXGroup;
 			children = (
-				C65F5CA32B7D1D6000C20B51 /* BookSearchView.swift */,
 				C65F5CA52B7D1D7800C20B51 /* BookSearchFactory.swift */,
+				C65F5CA32B7D1D6000C20B51 /* BookSearchView.swift */,
+				C65F5CA92B7D220200C20B51 /* BookSearchView+ViewModel.swift */,
 			);
 			path = BookSearchView;
 			sourceTree = "<group>";
@@ -216,6 +228,41 @@
 				C6921C102B7C51F0005C9943 /* ListItemCell.swift */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		C65F5CAD2B7D243B00C20B51 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				C65F5CAE2B7D244B00C20B51 /* GoogleBookSearchResult.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		C65F5CB22B7D281000C20B51 /* ReadingListItem */ = {
+			isa = PBXGroup;
+			children = (
+				C611DF052B7A8A4400F92A18 /* AddReadingListItemUseCase.swift */,
+				C6DC7C5F2B7BF761005D23DE /* RemoveReadingListItemUseCase.swift */,
+				C620168E2B7C157A0027BCBB /* UpdateReadingListItemUseCase.swift */,
+				C6DC7C5B2B7BE5CF005D23DE /* FetchReadingListItemsUseCase.swift */,
+			);
+			path = ReadingListItem;
+			sourceTree = "<group>";
+		};
+		C65F5CB52B7D28E300C20B51 /* BookSearch */ = {
+			isa = PBXGroup;
+			children = (
+				C65F5CB02B7D273E00C20B51 /* BookSearchRepository.swift */,
+			);
+			path = BookSearch;
+			sourceTree = "<group>";
+		};
+		C65F5CB62B7D2DFF00C20B51 /* BookSearch */ = {
+			isa = PBXGroup;
+			children = (
+				C65F5CB32B7D284500C20B51 /* FetchBooksUseCase.swift */,
+			);
+			path = BookSearch;
 			sourceTree = "<group>";
 		};
 		C6DC7C562B7BE397005D23DE /* LoggerServices */ = {
@@ -382,10 +429,13 @@
 				C6DC7C582B7BE3A9005D23DE /* CrashlyticsLogger.swift in Sources */,
 				C611DF022B7A887700F92A18 /* UseCase.swift in Sources */,
 				C611DEFD2B7A874900F92A18 /* ReadingListRepository.swift in Sources */,
+				C65F5CAA2B7D220200C20B51 /* BookSearchView+ViewModel.swift in Sources */,
 				C620168F2B7C157A0027BCBB /* UpdateReadingListItemUseCase.swift in Sources */,
 				C65F5CA42B7D1D6000C20B51 /* BookSearchView.swift in Sources */,
 				C6DC7C552B7BE346005D23DE /* ErrorLogger.swift in Sources */,
 				C6E28A7D2B7BCA590033E2B6 /* ReadingListView+ViewModel.swift in Sources */,
+				C65F5CB12B7D273E00C20B51 /* BookSearchRepository.swift in Sources */,
+				C65F5CAC2B7D23F900C20B51 /* BookSearchResult.swift in Sources */,
 				C6DC7C5C2B7BE5CF005D23DE /* FetchReadingListItemsUseCase.swift in Sources */,
 				C611DEF52B7A7F2500F92A18 /* ReadingListItem.swift in Sources */,
 				C611DF082B7A8E2100F92A18 /* ReadingListDatasource.swift in Sources */,
@@ -394,9 +444,11 @@
 				C6E28A812B7BCE180033E2B6 /* ViewFactory.swift in Sources */,
 				C62016912B7C1AD00027BCBB /* ReadingListItemUpdateModel.swift in Sources */,
 				C6DC7C602B7BF761005D23DE /* RemoveReadingListItemUseCase.swift in Sources */,
+				C65F5CAF2B7D244B00C20B51 /* GoogleBookSearchResult.swift in Sources */,
 				C6E28A7A2B7BCA110033E2B6 /* ReadingListView.swift in Sources */,
 				C65F5CA62B7D1D7800C20B51 /* BookSearchFactory.swift in Sources */,
 				C611DECB2B7A747000F92A18 /* PlotLuckApp.swift in Sources */,
+				C65F5CB42B7D284500C20B51 /* FetchBooksUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
