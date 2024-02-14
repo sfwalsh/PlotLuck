@@ -20,11 +20,7 @@ struct ReadingListView: View {
     var body: some View {
         List {
             ForEach(viewModel.items) { item in
-                ListItemCell(
-                    titleText: item.book.title,
-                    subtitleText: item.book.author,
-                    footnoteText: item.status.localizedDescription
-                )
+                buildReadingListItemCell(for: item)
                 .swipeActions(edge: .trailing) {
                     createDeleteItemButton(for: item)
                     createItemStatusToggleButton(for: item)
@@ -47,6 +43,27 @@ struct ReadingListView: View {
         .onAppear {
             viewModel.refreshData()
         }
+    }
+    
+    // Customisations to the encapsulating layout of the ListItemCell happen here,
+    // allowing the reuse of the shared functionality in BookSearchView
+    @ViewBuilder
+    private func buildReadingListItemCell(for item: ReadingListItem) -> some View {
+        VStack(alignment: .leading, spacing: 20) {
+            ListItemCell(
+                titleText: item.book.title,
+                subtitleText: item.book.author,
+                footnoteText: item.status.localizedDescription
+            )
+            Divider()
+                .frame(height: 0.5)
+                .overlay(Color.primary)
+                .opacity(0.4)
+                .padding(.horizontal, 12)
+        }
+        .padding(.top, 20)
+        .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
+        .listRowSeparator(.hidden)
     }
     
     @ViewBuilder
