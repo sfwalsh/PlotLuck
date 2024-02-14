@@ -17,8 +17,8 @@ struct ListItemCell: View {
         VStack(alignment: .leading, spacing: 20) {
             HStack(alignment: .center, spacing: 20) {
                 // Icon
-                Rectangle()
-                    .frame(width: 55, height: 80)
+//                Rectangle()
+//                    .frame(width: 55, height: 80)
                 
                 // Text
                 VStack(alignment: .leading) {
@@ -32,9 +32,8 @@ struct ListItemCell: View {
                         .fontDesign(.serif)
                         .opacity(0.8)
                     
-                    Spacer()
-                    
                     if let footnoteText = footnoteText {
+                        Spacer()
                         Text(footnoteText)
                             .font(.footnote)
                             .opacity(0.8)
