@@ -24,6 +24,7 @@ struct BookSearchView: View {
                     buildCell(forSearchResult: result)
                 }
             }
+            .listStyle(.plain)
             .searchable(
                 text: $viewModel.searchText,
                 placement: .navigationBarDrawer(displayMode:.always)
@@ -35,9 +36,8 @@ struct BookSearchView: View {
                 Button("Done") {
                     dismiss()
                 }
-                .fontWeight(.bold)
+                .fontWeight(.medium)
             }
-            
         }
     }
     
@@ -49,15 +49,17 @@ struct BookSearchView: View {
                 subtitleText: result.author,
                 footnoteText: nil
             )
+            Spacer()
             Button {
                 // TODO: Add feature to assign reading status from search result page
                 viewModel.addBookSearchResultToReadingList(
                     result,
                     readingStatus: .unread
                 )
+                dismiss()
             } label: {
-                Text("Add")
-            }
+                Text("Add \(Image(systemName: "plus"))")
+            }.buttonStyle(.borderedProminent)
         }
     }
 }

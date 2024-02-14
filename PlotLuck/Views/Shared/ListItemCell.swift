@@ -14,10 +14,10 @@ struct ListItemCell: View {
     let footnoteText: String?
     
     var body: some View {
-        HStack(alignment: .center, spacing: 20) {
+        HStack(alignment: .center) {
             // Icon
-            //                Rectangle()
-            //                    .frame(width: 55, height: 80)
+//            Rectangle()
+//                .frame(width: 55, height: 80)
             
             // Text
             VStack(alignment: .leading) {
@@ -40,7 +40,6 @@ struct ListItemCell: View {
             }
             .padding(.vertical, 6)
         }
-        .padding(.horizontal, 24)
     }
 }
 

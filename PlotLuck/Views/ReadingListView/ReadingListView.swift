@@ -62,7 +62,6 @@ struct ReadingListView: View {
                 .padding(.horizontal, 12)
         }
         .padding(.top, 20)
-        .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
         .listRowSeparator(.hidden)
     }
     
