@@ -17,6 +17,7 @@ extension BookSearchView {
         var searchText: String
         private(set) var bookSearchResults: [BookSearchResult]
         var viewDismissalPublisher = PassthroughSubject<Bool, Never>()
+        var activityIndicatorActive: Bool
         
         @ObservationIgnored
         private var shouldDismissView = false {
@@ -33,6 +34,7 @@ extension BookSearchView {
         @ObservationIgnored
         private let addReadingListItemUseCase: AddReadingListItemUseCase
         
+        @ObservationIgnored
         private let errorLogger: ErrorLogger
         
         init(
@@ -47,10 +49,12 @@ extension BookSearchView {
             self.fetchBooksUseCase = fetchBooksUseCase
             self.addReadingListItemUseCase = addReadingListItemUseCase
             self.errorLogger = errorLogger
+            self.activityIndicatorActive = false
         }
         
         func performSearch() {
             guard !searchText.isEmpty else { return }
+            activityIndicatorActive = true
             Task {
                 let result = await fetchBooksUseCase.execute(for: .init(searchText: searchText))
                 
@@ -78,6 +82,7 @@ extension BookSearchView {
         }
         
         private func harvestSearchResults(result: Result<[BookSearchResult], Error>) {
+            activityIndicatorActive = false
             switch result {
             case .success(let results):
                 bookSearchResults = results

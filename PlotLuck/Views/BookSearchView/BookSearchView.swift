@@ -20,9 +20,21 @@ struct BookSearchView: View {
     
     var body: some View {
         NavigationStack {
-            List {
-                ForEach(viewModel.bookSearchResults) { result in
-                    buildCell(forSearchResult: result)
+            ZStack {
+                List {
+                    ForEach(viewModel.bookSearchResults) { result in
+                        buildCell(forSearchResult: result)
+                    }
+                }.overlay {
+                    if viewModel.activityIndicatorActive {
+                        ProgressView()
+                    } else if viewModel.bookSearchResults.isEmpty {
+                            ContentUnavailableView(
+                                "Book Search",
+                                systemImage: "book",
+                                description: Text("Add an item to your reading list using the search bar")
+                            )
+                    }
                 }
             }
             .listStyle(.plain)

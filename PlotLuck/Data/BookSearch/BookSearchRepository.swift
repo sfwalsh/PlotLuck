@@ -14,7 +14,8 @@ protocol BookSearchRepository {
 
 struct GoogleBookSearchRepository: BookSearchRepository {
     func fetch(forSearchText searchText: String) async throws -> [BookSearchResult] {
-        [
+        try await Task.sleep(nanoseconds: 150_000_000)
+        return [
             BookSearchResult(author: "Haruki Murakami", title: "Killing Commendatore", isbn: "9781784877996"),
             BookSearchResult(author: "Michelle Zauner", title: "Crying in H Mart", isbn: "123489090123"),
             BookSearchResult(author: "Haruki Murakami", title: "Norweigan Wood", isbn: "978175234877996"),
