@@ -8,6 +8,17 @@
 import Foundation
 import SwiftData
 
-enum ReadingStatus: Codable, Equatable {
+enum ReadingStatus: String, Codable, Equatable {
     case unread, inProgress, finished
+    
+    var localizedDescription: String {
+        switch self {
+        case .unread:
+            "Unread"
+        case .inProgress:
+            "In Progress"
+        case .finished:
+            "Finished"
+        }
+    }
 }

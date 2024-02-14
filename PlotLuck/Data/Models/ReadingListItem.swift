@@ -10,9 +10,8 @@ import SwiftData
 
 @Model
 final class ReadingListItem: Equatable {
-    
     let book: Book
-    let status: ReadingStatus
+    var status: ReadingStatus
     
     init(book: Book, status: ReadingStatus) {
         self.book = book

@@ -85,6 +85,72 @@ final class LocalReadingListDataSourceTests: XCTestCase {
         XCTAssertFalse(itemsInContext.contains(itemToDelete), "the item should be deleted from the context")
         XCTAssertTrue(itemsInContext.contains(otherItem), "any other object should be unaffected")
     }
+    
+    func testUpdateItem_ReadingStatus() throws {
+        // Given an item is in the context
+        let itemToUpdate = ReadingListItem(
+            book: .init(title: "Item To Update", author: "B", isbn: "2"),
+            status: .unread
+        )
+        try insertItemsDirectlyToContext(items: [
+            itemToUpdate
+        ])
+        
+        // When I call dispatch an update operation to its reading status
+        let updateModel = ReadingListUpdateModel(
+            itemToUpdate: itemToUpdate,
+            updateType: .readingStatus(.inProgress)
+        )
+        try sut.update(updateModel: updateModel)
+        
+        // then the readingStatus is updated
+        let itemsInContext = try fetchItemsDirectlyFromContext()
+        XCTAssertEqual(itemsInContext.first!.status, .inProgress, "the item should have update its readingStatus from the context")
+    }
+    
+    func testUpdateItem_BookTitle() throws {
+        // Given an item is in the context
+        let itemToUpdate = ReadingListItem(
+            book: .init(title: "Children of Time", author: "Adrian Tchaikovsky", isbn: "2"),
+            status: .unread
+        )
+        try insertItemsDirectlyToContext(items: [
+            itemToUpdate
+        ])
+        
+        // When I call dispatch an update operation to its reading status
+        let updateModel = ReadingListUpdateModel(
+            itemToUpdate: itemToUpdate,
+            updateType: .bookTitle(title: "Children of Ruin")
+        )
+        try sut.update(updateModel: updateModel)
+        
+        // then the readingStatus is updated
+        let itemsInContext = try fetchItemsDirectlyFromContext()
+        XCTAssertEqual(itemsInContext.first!.book.title, "Children of Ruin", "the item should have updated its title from the context")
+    }
+    
+    func testUpdateItem_BookAuthor() throws {
+        // Given an item is in the context
+        let itemToUpdate = ReadingListItem(
+            book: .init(title: "The Sailor Who Fell From Grace With The Sea", author: "Ryūnosuke Akutagawa", isbn: "2"),
+            status: .unread
+        )
+        try insertItemsDirectlyToContext(items: [
+            itemToUpdate
+        ])
+        
+        // When I call dispatch an update operation to its reading status
+        let updateModel = ReadingListUpdateModel(
+            itemToUpdate: itemToUpdate,
+            updateType: .bookAuthor(author: "Yukio Mishima")
+        )
+        try sut.update(updateModel: updateModel)
+        
+        // then the readingStatus is updated
+        let itemsInContext = try fetchItemsDirectlyFromContext()
+        XCTAssertEqual(itemsInContext.first!.book.author, "Yukio Mishima", "the item should have updated its author from the context")
+    }
 }
 
 

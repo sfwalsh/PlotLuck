@@ -10,8 +10,8 @@ import SwiftData
 
 @Model
 final class Book: Equatable {
-    let title: String
-    let author: String
+    var title: String
+    var author: String
     let isbn: String
     
     init(title: String, author: String, isbn: String) {
