@@ -79,8 +79,6 @@ struct ReadingListView: View {
             }
         }
     }
-    
-    
 }
 
 #Preview {
