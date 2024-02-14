@@ -50,28 +50,6 @@ extension ReadingListView {
             self.errorLogger = errorLogger
         }
         
-        func addSampleData() {
-            Task {
-                let dummyBooks = [
-                    Book(title: "Crying in H Mart", author: "Michelle Zauner", isbn: "1234567890123"),
-                    Book(title: "Norweigan Wood", author: "Haruki Murakami", isbn: "9781784877996"),
-                    Book(title: "Hyperion", author: "Dan K. Simmons", isbn: "9781784877996"),
-                ]
-                let book = dummyBooks[Int.random(in: 0...dummyBooks.count-1)]
-                let item = ReadingListItem(book: book, status: .unread)
-                let result = await addReadingListItem.execute(for: item)
-                
-                await MainActor.run {
-                    switch result {
-                    case .success:
-                        refreshData()
-                    case .failure(let error):
-                        catchError(e: error)
-                    }
-                }
-            }
-        }
-        
         func refreshData() {
             Task {
                 let result = await fetchReadingListItems.execute()

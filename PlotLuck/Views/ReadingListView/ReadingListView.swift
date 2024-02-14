@@ -32,7 +32,6 @@ struct ReadingListView: View {
         .listStyle(.inset)
         .navigationTitle("PlotLuck")
         .toolbar {
-            Button("Add Sample", action: viewModel.addSampleData)
             Button {
                 showingBookSearchView.toggle()
             } label: {
