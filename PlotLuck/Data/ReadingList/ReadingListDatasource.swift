@@ -34,9 +34,9 @@ struct LocalReadingListDatasource: ReadingListDatasource {
         case .readingStatus(let readingStatus):
             updateModel.itemToUpdate.status = readingStatus
         case .bookTitle(let title):
-            break
+            updateModel.itemToUpdate.book.title = title
         case .bookAuthor(let author):
-            break
+            updateModel.itemToUpdate.book.author = author
         }
         try modelContext.save()
     }
