@@ -27,6 +27,8 @@
 		C6547F6F2B7E8689003FC6B2 /* GoogleBooksDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6547F6E2B7E8689003FC6B2 /* GoogleBooksDataSourceTests.swift */; };
 		C6547F712B7E86AD003FC6B2 /* MockNetworkInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6547F702B7E86AD003FC6B2 /* MockNetworkInterface.swift */; };
 		C6547F732B7E86C0003FC6B2 /* MockURLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6547F722B7E86C0003FC6B2 /* MockURLBuilder.swift */; };
+		C6547F782B7EB0DB003FC6B2 /* SecretsInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6547F772B7EB0DB003FC6B2 /* SecretsInterface.swift */; };
+		C6547F7A2B7EB2A2003FC6B2 /* SecretCollection.plist in Resources */ = {isa = PBXBuildFile; fileRef = C6547F792B7EB2A2003FC6B2 /* SecretCollection.plist */; };
 		C65F5CA42B7D1D6000C20B51 /* BookSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F5CA32B7D1D6000C20B51 /* BookSearchView.swift */; };
 		C65F5CA62B7D1D7800C20B51 /* BookSearchFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F5CA52B7D1D7800C20B51 /* BookSearchFactory.swift */; };
 		C65F5CAA2B7D220200C20B51 /* BookSearchView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F5CA92B7D220200C20B51 /* BookSearchView+ViewModel.swift */; };
@@ -87,6 +89,8 @@
 		C6547F6E2B7E8689003FC6B2 /* GoogleBooksDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleBooksDataSourceTests.swift; sourceTree = "<group>"; };
 		C6547F702B7E86AD003FC6B2 /* MockNetworkInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkInterface.swift; sourceTree = "<group>"; };
 		C6547F722B7E86C0003FC6B2 /* MockURLBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLBuilder.swift; sourceTree = "<group>"; };
+		C6547F772B7EB0DB003FC6B2 /* SecretsInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretsInterface.swift; sourceTree = "<group>"; };
+		C6547F792B7EB2A2003FC6B2 /* SecretCollection.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = SecretCollection.plist; sourceTree = "<group>"; };
 		C65F5CA32B7D1D6000C20B51 /* BookSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchView.swift; sourceTree = "<group>"; };
 		C65F5CA52B7D1D7800C20B51 /* BookSearchFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchFactory.swift; sourceTree = "<group>"; };
 		C65F5CA92B7D220200C20B51 /* BookSearchView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BookSearchView+ViewModel.swift"; sourceTree = "<group>"; };
@@ -154,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				C611DECA2B7A747000F92A18 /* PlotLuckApp.swift */,
+				C6547F792B7EB2A2003FC6B2 /* SecretCollection.plist */,
 				C6E28A7B2B7BCA190033E2B6 /* Views */,
 				C611DEF62B7A7F3000F92A18 /* Data */,
 				C611DF032B7A89EB00F92A18 /* Domain */,
@@ -188,6 +193,7 @@
 				C611DF002B7A885600F92A18 /* ReadingList */,
 				C611DEFB2B7A86B600F92A18 /* Models */,
 				C6547F762B7EB0BB003FC6B2 /* Network */,
+				C6547F772B7EB0DB003FC6B2 /* SecretsInterface.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -458,6 +464,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6547F7A2B7EB2A2003FC6B2 /* SecretCollection.plist in Resources */,
 				C611DED22B7A747100F92A18 /* Preview Assets.xcassets in Resources */,
 				C611DECF2B7A747100F92A18 /* Assets.xcassets in Resources */,
 			);
@@ -491,6 +498,7 @@
 				C6DC7C552B7BE346005D23DE /* ErrorLogger.swift in Sources */,
 				C6E28A7D2B7BCA590033E2B6 /* ReadingListView+ViewModel.swift in Sources */,
 				C65F5CB12B7D273E00C20B51 /* BookSearchRepository.swift in Sources */,
+				C6547F782B7EB0DB003FC6B2 /* SecretsInterface.swift in Sources */,
 				C65F5CAC2B7D23F900C20B51 /* BookSearchResult.swift in Sources */,
 				C6DC7C5C2B7BE5CF005D23DE /* FetchReadingListItemsUseCase.swift in Sources */,
 				C611DEF52B7A7F2500F92A18 /* ReadingListItem.swift in Sources */,

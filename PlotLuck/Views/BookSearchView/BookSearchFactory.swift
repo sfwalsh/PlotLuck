@@ -16,9 +16,11 @@ struct BookSearchViewFactory: ViewFactory {
     func create(for requestValue: RequestValues) -> BookSearchView {
         let urlSession = URLSession.shared
         
+        // coding challenge review convenience note: replace the call to SecretsInterface with hardcoded api key
         let urlBuilder = GoogleBooksURLBuilder(
-            apiKey: ""
+            apiKey: SecretsInterface.shared.googleBooksAPIKey
         )
+        
         let network = NetworkInterface.Default(urlSession: urlSession)
         let bookSearchDatasource = GoogleBooksDataSource(network: network, urlBuilder: urlBuilder)
         let bookSearchRepository = GoogleBookSearchRepository(datasource: bookSearchDatasource)
