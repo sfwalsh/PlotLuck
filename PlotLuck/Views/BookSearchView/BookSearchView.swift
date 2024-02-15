@@ -64,7 +64,8 @@ struct BookSearchView: View {
         HStack {
             ListItemCell(
                 titleText: result.title,
-                subtitleText: result.author,
+                subtitleText: result.author, 
+                imageURLString: nil,
                 footnoteText: nil
             )
             Spacer()

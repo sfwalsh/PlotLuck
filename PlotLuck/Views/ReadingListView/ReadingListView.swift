@@ -56,7 +56,8 @@ struct ReadingListView: View {
         VStack(alignment: .leading, spacing: 20) {
             ListItemCell(
                 titleText: item.book.title,
-                subtitleText: item.book.author,
+                subtitleText: item.book.author, 
+                imageURLString: nil,
                 footnoteText: item.status.localizedDescription
             )
             Divider()
