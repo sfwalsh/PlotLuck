@@ -187,9 +187,7 @@
 				C65F5CB52B7D28E300C20B51 /* BookSearch */,
 				C611DF002B7A885600F92A18 /* ReadingList */,
 				C611DEFB2B7A86B600F92A18 /* Models */,
-				C6F4A7F62B7D879000D1C360 /* NetworkInterface.swift */,
-				C6F4A7FA2B7D8A0F00D1C360 /* NetworkError.swift */,
-				C6547F6A2B7E785F003FC6B2 /* URLBuilder.swift */,
+				C6547F762B7EB0BB003FC6B2 /* Network */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -233,6 +231,16 @@
 				C65F5CB22B7D281000C20B51 /* ReadingList */,
 			);
 			path = UseCases;
+			sourceTree = "<group>";
+		};
+		C6547F762B7EB0BB003FC6B2 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				C6F4A7F62B7D879000D1C360 /* NetworkInterface.swift */,
+				C6F4A7FA2B7D8A0F00D1C360 /* NetworkError.swift */,
+				C6547F6A2B7E785F003FC6B2 /* URLBuilder.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		C65F5CA72B7D1D8B00C20B51 /* BookSearchView */ = {
