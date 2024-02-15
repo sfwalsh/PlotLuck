@@ -17,10 +17,7 @@ struct ListItemCell: View {
     var body: some View {
         HStack(alignment: .center) {
             // Icon
-            if let imageURLString = imageURLString,
-                let imageURL = URL(string: imageURLString) {
-                buildImageContent(for: imageURL)
-            }
+            buildImageContent()
             
             // Text
             VStack(alignment: .leading) {
@@ -47,20 +44,32 @@ struct ListItemCell: View {
     }
     
     @ViewBuilder
-    private func buildImageContent(for imageURL: URL) -> some View {
+    private func buildImageContent() -> some View {
         ZStack(alignment: .bottomTrailing) {
-            AsyncImage(url: imageURL) { image in
-                image.resizable()
-                    .scaledToFill()
-            } placeholder: {
-                Image(systemName: "book.pages")
-                    .scaledToFill()
-                    .frame(width: 55, height: 80)
-                    .background(RoundedRectangle(cornerSize: CGSize(width: 2, height: 2)).opacity(0.2))
+            if let imageURLString = imageURLString,
+                let imageURL = URL(string: imageURLString) {
+                // Image
+                AsyncImage(url: imageURL) { image in
+                    image.resizable()
+                        .scaledToFill()
+                } placeholder: {
+                    createImagePlaceholder()
+                }
+                .frame(width: 55, height: 80)
+                .clipped()
+            } else {
+                // Placeholder only
+                createImagePlaceholder()
             }
-            .frame(width: 55, height: 80)
-            .clipped()
         }.padding(.trailing, 12)
+    }
+    
+    @ViewBuilder
+    private func createImagePlaceholder() -> some View {
+        Image(systemName: "book.pages")
+            .scaledToFill()
+            .frame(width: 55, height: 80)
+            .background(RoundedRectangle(cornerSize: CGSize(width: 2, height: 2)).opacity(0.2))
     }
 }
 
