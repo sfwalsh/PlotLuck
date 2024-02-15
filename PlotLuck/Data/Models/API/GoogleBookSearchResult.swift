@@ -21,6 +21,12 @@ struct GoogleBookSearchResponse: Decodable {
         let authors: [String]?
         let industryIdentifiers: [IndustryIdentifiers]?
         
+        init(title: String?, authors: [String]?, industryIdentifiers: [IndustryIdentifiers]?) {
+            self.title = title
+            self.authors = authors
+            self.industryIdentifiers = industryIdentifiers
+        }
+        
         init(from decoder: Decoder) throws {
             let container = try decoder.container(keyedBy: CodingKeys.self)
             title = try container.decodeIfPresent(String.self, forKey: .title)
