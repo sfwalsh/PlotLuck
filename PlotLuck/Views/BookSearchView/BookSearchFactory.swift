@@ -14,7 +14,13 @@ struct BookSearchViewFactory: ViewFactory {
     
     @MainActor
     func create(for requestValue: RequestValues) -> BookSearchView {
-        let bookSearchRepository = GoogleBookSearchRepository()
+        let urlSession = URLSession.shared
+        let urlBuilder = GoogleBooksURLBuilder(
+            apiKey: ""
+        )
+        let network = NetworkInterface.Default(urlSession: urlSession)
+        let bookSearchDatasource = GoogleBooksDataSource(network: network, urlBuilder: urlBuilder)
+        let bookSearchRepository = GoogleBookSearchRepository(datasource: bookSearchDatasource)
                 
         let readingListDatasource = ReadingListDatasource.Default(modelContext: requestValue.modelContext)
         let readingListRepository = ReadingListRepository.Default(datasource: readingListDatasource)
