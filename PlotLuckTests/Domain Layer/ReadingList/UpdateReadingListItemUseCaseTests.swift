@@ -28,7 +28,8 @@ final class UpdateReadingListItemUseCaseTests: XCTestCase {
             book: .init(
                 title: "Aladdin",
                 author: "Scheherazade",
-                isbn: "9781784877996"
+                isbn: "9781784877996",
+                imageURLString: nil
             ),
             status: .unread
         )
@@ -57,7 +58,8 @@ final class UpdateReadingListItemUseCaseTests: XCTestCase {
             book: .init(
                 title: "Aladdin",
                 author: "Scheherazade",
-                isbn: "9781784877996"
+                isbn: "9781784877996",
+                imageURLString: nil
             ),
             status: .unread
         )

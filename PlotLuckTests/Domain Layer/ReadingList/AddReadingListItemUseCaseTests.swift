@@ -26,7 +26,8 @@ final class AddReadingListItemUseCaseTests: XCTestCase {
             book: .init(
                 title: "Norweigan Wood",
                 author: "Haruki Murakami",
-                isbn: "9781784877996"
+                isbn: "9781784877996", 
+                imageURLString: nil
             ),
             status: .unread
         )
@@ -51,7 +52,8 @@ final class AddReadingListItemUseCaseTests: XCTestCase {
             book: .init(
                 title: "Norweigan Wood",
                 author: "Haruki Murakami",
-                isbn: "9781784877996"
+                isbn: "9781784877996", 
+                imageURLString: nil
             ),
             status: .unread
         )

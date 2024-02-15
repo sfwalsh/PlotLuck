@@ -71,7 +71,11 @@ extension BookSearchView {
             Task {
                 let result = await addReadingListItemUseCase.execute(
                     for: .init(
-                        book: .init(title: searchResult.title, author: searchResult.author, isbn: searchResult.isbn),
+                        book: .init(
+                            title: searchResult.title,
+                            author: searchResult.author,
+                            isbn: searchResult.isbn,
+                            imageURLString: searchResult.imageURLString),
                         status: readingStatus
                     )
                 )

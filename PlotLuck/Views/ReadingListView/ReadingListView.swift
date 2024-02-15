@@ -57,7 +57,7 @@ struct ReadingListView: View {
             ListItemCell(
                 titleText: item.book.title,
                 subtitleText: item.book.author, 
-                imageURLString: nil,
+                imageURLString: item.book.imageURLString,
                 footnoteText: item.status.localizedDescription
             )
             Divider()

@@ -25,7 +25,7 @@ final class FetchReadingListItemsUseCaseTests: XCTestCase {
         let repository = MockReadingListRepository()
         let items = [
             ReadingListItem(
-                book: .init(title: "The Three Body Problem", author: "Cixin Liu", isbn: "1234"),
+                book: .init(title: "The Three Body Problem", author: "Cixin Liu", isbn: "1234", imageURLString: nil),
                 status: .finished
             )
         ]

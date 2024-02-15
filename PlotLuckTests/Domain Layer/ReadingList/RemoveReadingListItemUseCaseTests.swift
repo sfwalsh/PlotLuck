@@ -27,7 +27,8 @@ final class RemoveReadingListItemUseCaseTests: XCTestCase {
             book: .init(
                 title: "Hyperion",
                 author: "Dan K. Simmons",
-                isbn: "9781784877996"
+                isbn: "9781784877996",
+                imageURLString: nil
             ),
             status: .finished
         )
@@ -52,7 +53,8 @@ final class RemoveReadingListItemUseCaseTests: XCTestCase {
             book: .init(
                 title: "Hyperion",
                 author: "Dan K. Simmons",
-                isbn: "9781784877996"
+                isbn: "9781784877996", 
+                imageURLString: nil
             ),
             status: .finished
         )

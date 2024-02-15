@@ -13,10 +13,12 @@ final class Book: Equatable {
     var title: String
     var author: String
     let isbn: String
+    let imageURLString: String?
     
-    init(title: String, author: String, isbn: String) {
+    init(title: String, author: String, isbn: String, imageURLString: String? = nil) {
         self.title = title
         self.author = author
         self.isbn = isbn
+        self.imageURLString = imageURLString
     }
 }

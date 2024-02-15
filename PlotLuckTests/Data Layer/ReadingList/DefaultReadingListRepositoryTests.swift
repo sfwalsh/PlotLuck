@@ -88,7 +88,7 @@ extension DefaultReadingListRepositoryTests {
     
     private func createDummyReadingListItem() -> ReadingListItem {
         ReadingListItem(
-            book: .init(title: "Memory Police", author: "Yoko Ogawa", isbn: "9782330017781"),
+            book: .init(title: "Memory Police", author: "Yoko Ogawa", isbn: "9782330017781", imageURLString: nil),
             status: .inProgress
         )
     }
