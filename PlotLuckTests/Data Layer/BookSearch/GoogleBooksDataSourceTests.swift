@@ -156,7 +156,8 @@ extension GoogleBooksDataSourceTests {
             volumeInfo: .init(
                 title: volumeInfoTitle,
                 authors: volumeInfoAuthors,
-                industryIdentifiers: volumeInfoIndustryIdentifiers
+                industryIdentifiers: volumeInfoIndustryIdentifiers, 
+                imageLinks: nil
             )
         )
     }

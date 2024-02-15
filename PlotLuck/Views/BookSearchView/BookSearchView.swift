@@ -65,7 +65,7 @@ struct BookSearchView: View {
             ListItemCell(
                 titleText: result.title,
                 subtitleText: result.author, 
-                imageURLString: nil,
+                imageURLString: result.imageURLString,
                 footnoteText: nil
             )
             Spacer()

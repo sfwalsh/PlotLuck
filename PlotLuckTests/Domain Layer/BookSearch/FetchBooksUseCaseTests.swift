@@ -14,7 +14,7 @@ final class FetchBooksUseCaseTests: XCTestCase {
         // Given
         let repository = MockBookSearchRepository()
         repository.fetchResult = [
-            .init(author: "Author", title: "Book", isbn: "1234")
+            .init(imageURLString: nil, author: "Author", title: "Book", isbn: "1234")
         ]
         let useCase = FetchBooksUseCase(repository: repository)
         
@@ -36,7 +36,7 @@ final class FetchBooksUseCaseTests: XCTestCase {
         // Given
         let repository = MockBookSearchRepository()
         repository.fetchResult = [
-            .init(author: "Author", title: "Book", isbn: "1234")
+            .init(imageURLString: nil, author: "Author", title: "Book", isbn: "1234")
         ]
         let useCase = FetchBooksUseCase(repository: repository)
         

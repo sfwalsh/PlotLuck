@@ -33,6 +33,7 @@ struct GoogleBooksDataSource: BookSearchDatasource {
         
         return filteredItems.map {
             BookSearchResult(
+                imageURLString: $0.volumeInfo.imageLinks?.smallThumbnail,
                 author: $0.volumeInfo.authors?.joined(separator: ", ") ?? "",
                 title: $0.volumeInfo.title ?? "",
                 isbn: $0.volumeInfo.industryIdentifiers?.first?.identifier ?? ""

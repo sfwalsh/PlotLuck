@@ -11,5 +11,6 @@ struct BookSearchResult: Identifiable, Equatable {
     var id: String {
         isbn
     }
+    let imageURLString: String?
     let author, title, isbn: String
 }

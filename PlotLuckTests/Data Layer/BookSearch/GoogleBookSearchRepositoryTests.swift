@@ -25,7 +25,7 @@ final class GoogleBookSearchRepositoryTests: XCTestCase {
         let searchText = "Test"
         let expectedResults = [
             BookSearchResult(
-                author: "The Unknown Craftsman", title: "Soetsu Yanagi", isbn: "9780870111846"
+                imageURLString: nil, author: "The Unknown Craftsman", title: "Soetsu Yanagi", isbn: "9780870111846"
             )
         ]
         mockDatasource.fetchResult = expectedResults
