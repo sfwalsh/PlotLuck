@@ -129,9 +129,6 @@ final class GoogleBooksDataSourceTests: XCTestCase {
     
     func testFetchWithNetworkError() async throws {
         // Given
-        let response = GoogleBookSearchResponse(items: [
-            createGoogleBookSearchResponseItem()
-        ])
         network.errorValue = MockError(errorDescription: "invalid results")
         
         // When

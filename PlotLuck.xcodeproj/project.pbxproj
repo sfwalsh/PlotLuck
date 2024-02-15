@@ -31,6 +31,8 @@
 		C6547F7A2B7EB2A2003FC6B2 /* SecretCollection.plist in Resources */ = {isa = PBXBuildFile; fileRef = C6547F792B7EB2A2003FC6B2 /* SecretCollection.plist */; };
 		C6547F7C2B7EB55A003FC6B2 /* DefaultReadingListRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6547F7B2B7EB55A003FC6B2 /* DefaultReadingListRepositoryTests.swift */; };
 		C6547F7E2B7EB5BD003FC6B2 /* MockReadingListDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6547F7D2B7EB5BD003FC6B2 /* MockReadingListDatasource.swift */; };
+		C6547F822B7EB74C003FC6B2 /* GoogleBookSearchRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6547F812B7EB74C003FC6B2 /* GoogleBookSearchRepositoryTests.swift */; };
+		C6547F842B7EB771003FC6B2 /* MockBookSearchDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6547F832B7EB771003FC6B2 /* MockBookSearchDatasource.swift */; };
 		C65F5CA42B7D1D6000C20B51 /* BookSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F5CA32B7D1D6000C20B51 /* BookSearchView.swift */; };
 		C65F5CA62B7D1D7800C20B51 /* BookSearchFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F5CA52B7D1D7800C20B51 /* BookSearchFactory.swift */; };
 		C65F5CAA2B7D220200C20B51 /* BookSearchView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F5CA92B7D220200C20B51 /* BookSearchView+ViewModel.swift */; };
@@ -95,6 +97,8 @@
 		C6547F792B7EB2A2003FC6B2 /* SecretCollection.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = SecretCollection.plist; sourceTree = "<group>"; };
 		C6547F7B2B7EB55A003FC6B2 /* DefaultReadingListRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultReadingListRepositoryTests.swift; sourceTree = "<group>"; };
 		C6547F7D2B7EB5BD003FC6B2 /* MockReadingListDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockReadingListDatasource.swift; sourceTree = "<group>"; };
+		C6547F812B7EB74C003FC6B2 /* GoogleBookSearchRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleBookSearchRepositoryTests.swift; sourceTree = "<group>"; };
+		C6547F832B7EB771003FC6B2 /* MockBookSearchDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockBookSearchDatasource.swift; sourceTree = "<group>"; };
 		C65F5CA32B7D1D6000C20B51 /* BookSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchView.swift; sourceTree = "<group>"; };
 		C65F5CA52B7D1D7800C20B51 /* BookSearchFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchFactory.swift; sourceTree = "<group>"; };
 		C65F5CA92B7D220200C20B51 /* BookSearchView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BookSearchView+ViewModel.swift"; sourceTree = "<group>"; };
@@ -253,6 +257,25 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		C6547F7F2B7EB708003FC6B2 /* BookSearch */ = {
+			isa = PBXGroup;
+			children = (
+				C6547F6C2B7E8264003FC6B2 /* GoogleBooksURLBuilderTests.swift */,
+				C6547F812B7EB74C003FC6B2 /* GoogleBookSearchRepositoryTests.swift */,
+				C6547F6E2B7E8689003FC6B2 /* GoogleBooksDataSourceTests.swift */,
+			);
+			path = BookSearch;
+			sourceTree = "<group>";
+		};
+		C6547F802B7EB70F003FC6B2 /* ReadingList */ = {
+			isa = PBXGroup;
+			children = (
+				C6E28A762B7BC6120033E2B6 /* LocalReadingListDataSourceTests.swift */,
+				C6547F7B2B7EB55A003FC6B2 /* DefaultReadingListRepositoryTests.swift */,
+			);
+			path = ReadingList;
+			sourceTree = "<group>";
+		};
 		C65F5CA72B7D1D8B00C20B51 /* BookSearchView */ = {
 			isa = PBXGroup;
 			children = (
@@ -343,6 +366,7 @@
 				C65F5CBB2B7D493F00C20B51 /* MockBookSearchRepository.swift */,
 				C6547F702B7E86AD003FC6B2 /* MockNetworkInterface.swift */,
 				C6E28A722B7BBBE90033E2B6 /* MockError.swift */,
+				C6547F832B7EB771003FC6B2 /* MockBookSearchDatasource.swift */,
 				C6547F722B7E86C0003FC6B2 /* MockURLBuilder.swift */,
 			);
 			path = Mocks;
@@ -360,10 +384,8 @@
 		C6E28A782B7BC6150033E2B6 /* Data Layer */ = {
 			isa = PBXGroup;
 			children = (
-				C6E28A762B7BC6120033E2B6 /* LocalReadingListDataSourceTests.swift */,
-				C6547F7B2B7EB55A003FC6B2 /* DefaultReadingListRepositoryTests.swift */,
-				C6547F6C2B7E8264003FC6B2 /* GoogleBooksURLBuilderTests.swift */,
-				C6547F6E2B7E8689003FC6B2 /* GoogleBooksDataSourceTests.swift */,
+				C6547F802B7EB70F003FC6B2 /* ReadingList */,
+				C6547F7F2B7EB708003FC6B2 /* BookSearch */,
 			);
 			path = "Data Layer";
 			sourceTree = "<group>";
@@ -529,10 +551,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6547F7E2B7EB5BD003FC6B2 /* MockReadingListDatasource.swift in Sources */,
+				C6547F822B7EB74C003FC6B2 /* GoogleBookSearchRepositoryTests.swift in Sources */,
 				C611DF0A2B7A91AC00F92A18 /* MockReadingListRepository.swift in Sources */,
 				C6DC7C5E2B7BEEC7005D23DE /* FetchReadingListItemsUseCaseTests.swift in Sources */,
 				C6547F712B7E86AD003FC6B2 /* MockNetworkInterface.swift in Sources */,
 				C6E28A732B7BBBE90033E2B6 /* MockError.swift in Sources */,
+				C6547F842B7EB771003FC6B2 /* MockBookSearchDatasource.swift in Sources */,
 				C65F5CB92B7D490B00C20B51 /* FetchBooksUseCaseTests.swift in Sources */,
 				C62016932B7C1C9E0027BCBB /* UpdateReadingListItemUseCaseTests.swift in Sources */,
 				C6DC7C622B7BF9F2005D23DE /* RemoveReadingListItemUseCaseTests.swift in Sources */,
