@@ -99,6 +99,7 @@
 		C6547F7D2B7EB5BD003FC6B2 /* MockReadingListDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockReadingListDatasource.swift; sourceTree = "<group>"; };
 		C6547F812B7EB74C003FC6B2 /* GoogleBookSearchRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleBookSearchRepositoryTests.swift; sourceTree = "<group>"; };
 		C6547F832B7EB771003FC6B2 /* MockBookSearchDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockBookSearchDatasource.swift; sourceTree = "<group>"; };
+		C6547F852B7EBA0E003FC6B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C65F5CA32B7D1D6000C20B51 /* BookSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchView.swift; sourceTree = "<group>"; };
 		C65F5CA52B7D1D7800C20B51 /* BookSearchFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchFactory.swift; sourceTree = "<group>"; };
 		C65F5CA92B7D220200C20B51 /* BookSearchView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BookSearchView+ViewModel.swift"; sourceTree = "<group>"; };
@@ -166,11 +167,10 @@
 			isa = PBXGroup;
 			children = (
 				C611DECA2B7A747000F92A18 /* PlotLuckApp.swift */,
-				C6547F792B7EB2A2003FC6B2 /* SecretCollection.plist */,
 				C6E28A7B2B7BCA190033E2B6 /* Views */,
 				C611DEF62B7A7F3000F92A18 /* Data */,
 				C611DF032B7A89EB00F92A18 /* Domain */,
-				C611DECE2B7A747100F92A18 /* Assets.xcassets */,
+				C6547F862B7EBA49003FC6B2 /* Resources */,
 				C611DED02B7A747100F92A18 /* Preview Content */,
 			);
 			path = PlotLuck;
@@ -274,6 +274,16 @@
 				C6547F7B2B7EB55A003FC6B2 /* DefaultReadingListRepositoryTests.swift */,
 			);
 			path = ReadingList;
+			sourceTree = "<group>";
+		};
+		C6547F862B7EBA49003FC6B2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C6547F792B7EB2A2003FC6B2 /* SecretCollection.plist */,
+				C6547F852B7EBA0E003FC6B2 /* Info.plist */,
+				C611DECE2B7A747100F92A18 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		C65F5CA72B7D1D8B00C20B51 /* BookSearchView */ = {
@@ -711,6 +721,7 @@
 				DEVELOPMENT_TEAM = 29XC7B4KB4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PlotLuck/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -740,6 +751,7 @@
 				DEVELOPMENT_TEAM = 29XC7B4KB4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PlotLuck/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
