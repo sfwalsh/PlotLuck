@@ -18,7 +18,6 @@ final class GoogleBooksURLBuilderTests: XCTestCase {
         // Given
         let builder = GoogleBooksURLBuilder(baseURLString: baseURLString, apiKey: apiKey)
         let searchTerm = "Harry Potter and The Quinlans\\"
-        let expectedCleanedSearchTerm = "Harry%20Potter%20and%20The%20Quinlans%5C"
         
         // When
         do {
@@ -30,7 +29,7 @@ final class GoogleBooksURLBuilderTests: XCTestCase {
             XCTAssertEqual(url.path, "/books/v1/volumes")
             
             let queryItems = URLComponents(url: url, resolvingAgainstBaseURL: false)?.queryItems
-            XCTAssertTrue(queryItems?.contains(URLQueryItem(name: "q", value: expectedCleanedSearchTerm)) ?? false)
+            XCTAssertTrue(queryItems?.contains(URLQueryItem(name: "q", value: searchTerm)) ?? false)
             XCTAssertTrue(queryItems?.contains(URLQueryItem(name: "key", value: apiKey)) ?? false)
         } catch {
             XCTFail("Unexpected error: \(error)")

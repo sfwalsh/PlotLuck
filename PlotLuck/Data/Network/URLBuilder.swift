@@ -29,16 +29,12 @@ struct GoogleBooksURLBuilder: URLBuilder {
             throw NetworkError.badURL
         }
         
-        guard let cleanedSearchTerm = searchTerm.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else {
-            throw NetworkError.invalidSearchTerm
-        }
-        
         // Append path component
         components.path += "volumes"
         
         // Add query parameters
         components.queryItems = [
-            URLQueryItem(name: "q", value: cleanedSearchTerm),
+            URLQueryItem(name: "q", value: searchTerm),
             URLQueryItem(name: "key", value: apiKey)
         ]
         
