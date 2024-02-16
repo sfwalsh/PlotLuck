@@ -22,6 +22,8 @@
 		C620168F2B7C157A0027BCBB /* UpdateReadingListItemUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C620168E2B7C157A0027BCBB /* UpdateReadingListItemUseCase.swift */; };
 		C62016912B7C1AD00027BCBB /* ReadingListItemUpdateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62016902B7C1AD00027BCBB /* ReadingListItemUpdateModel.swift */; };
 		C62016932B7C1C9E0027BCBB /* UpdateReadingListItemUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62016922B7C1C9E0027BCBB /* UpdateReadingListItemUseCaseTests.swift */; };
+		C6383A292B7F9A3D000DE84F /* BookSearchViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6383A282B7F9A3D000DE84F /* BookSearchViewModelTests.swift */; };
+		C6383A2E2B7FA042000DE84F /* MockErrorLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6383A2D2B7FA042000DE84F /* MockErrorLogger.swift */; };
 		C6547F6B2B7E785F003FC6B2 /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6547F6A2B7E785F003FC6B2 /* URLBuilder.swift */; };
 		C6547F6D2B7E8264003FC6B2 /* GoogleBooksURLBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6547F6C2B7E8264003FC6B2 /* GoogleBooksURLBuilderTests.swift */; };
 		C6547F6F2B7E8689003FC6B2 /* GoogleBooksDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6547F6E2B7E8689003FC6B2 /* GoogleBooksDataSourceTests.swift */; };
@@ -88,6 +90,8 @@
 		C620168E2B7C157A0027BCBB /* UpdateReadingListItemUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateReadingListItemUseCase.swift; sourceTree = "<group>"; };
 		C62016902B7C1AD00027BCBB /* ReadingListItemUpdateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingListItemUpdateModel.swift; sourceTree = "<group>"; };
 		C62016922B7C1C9E0027BCBB /* UpdateReadingListItemUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateReadingListItemUseCaseTests.swift; sourceTree = "<group>"; };
+		C6383A282B7F9A3D000DE84F /* BookSearchViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchViewModelTests.swift; sourceTree = "<group>"; };
+		C6383A2D2B7FA042000DE84F /* MockErrorLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockErrorLogger.swift; sourceTree = "<group>"; };
 		C6547F6A2B7E785F003FC6B2 /* URLBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBuilder.swift; sourceTree = "<group>"; };
 		C6547F6C2B7E8264003FC6B2 /* GoogleBooksURLBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleBooksURLBuilderTests.swift; sourceTree = "<group>"; };
 		C6547F6E2B7E8689003FC6B2 /* GoogleBooksDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleBooksDataSourceTests.swift; sourceTree = "<group>"; };
@@ -189,6 +193,7 @@
 			children = (
 				C6E28A782B7BC6150033E2B6 /* Data Layer */,
 				C6E28A752B7BC57D0033E2B6 /* Domain Layer */,
+				C6383A2A2B7F9A43000DE84F /* PresentationLayer */,
 				C6E28A742B7BC5760033E2B6 /* Mocks */,
 			);
 			path = PlotLuckTests;
@@ -245,6 +250,14 @@
 				C65F5CB22B7D281000C20B51 /* ReadingList */,
 			);
 			path = UseCases;
+			sourceTree = "<group>";
+		};
+		C6383A2A2B7F9A43000DE84F /* PresentationLayer */ = {
+			isa = PBXGroup;
+			children = (
+				C6383A282B7F9A3D000DE84F /* BookSearchViewModelTests.swift */,
+			);
+			path = PresentationLayer;
 			sourceTree = "<group>";
 		};
 		C6547F762B7EB0BB003FC6B2 /* Network */ = {
@@ -377,6 +390,7 @@
 				C6547F702B7E86AD003FC6B2 /* MockNetworkInterface.swift */,
 				C6E28A722B7BBBE90033E2B6 /* MockError.swift */,
 				C6547F832B7EB771003FC6B2 /* MockBookSearchDatasource.swift */,
+				C6383A2D2B7FA042000DE84F /* MockErrorLogger.swift */,
 				C6547F722B7E86C0003FC6B2 /* MockURLBuilder.swift */,
 			);
 			path = Mocks;
@@ -571,9 +585,11 @@
 				C62016932B7C1C9E0027BCBB /* UpdateReadingListItemUseCaseTests.swift in Sources */,
 				C6DC7C622B7BF9F2005D23DE /* RemoveReadingListItemUseCaseTests.swift in Sources */,
 				C6E28A772B7BC6120033E2B6 /* LocalReadingListDataSourceTests.swift in Sources */,
+				C6383A292B7F9A3D000DE84F /* BookSearchViewModelTests.swift in Sources */,
 				C6547F7C2B7EB55A003FC6B2 /* DefaultReadingListRepositoryTests.swift in Sources */,
 				C65F5CBC2B7D493F00C20B51 /* MockBookSearchRepository.swift in Sources */,
 				C6547F732B7E86C0003FC6B2 /* MockURLBuilder.swift in Sources */,
+				C6383A2E2B7FA042000DE84F /* MockErrorLogger.swift in Sources */,
 				C6547F6F2B7E8689003FC6B2 /* GoogleBooksDataSourceTests.swift in Sources */,
 				C6547F6D2B7E8264003FC6B2 /* GoogleBooksURLBuilderTests.swift in Sources */,
 				C611DEDC2B7A747200F92A18 /* AddReadingListItemUseCaseTests.swift in Sources */,

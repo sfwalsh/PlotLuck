@@ -9,6 +9,6 @@ import Foundation
 
 struct CrashlyticsLogger: ErrorLogger {
     func log(for error: Error) {
-        // TODO: Connect to Firebase
+        // Note in a production app, a logging service like Crashlyics would be implemented here
     }
 }
