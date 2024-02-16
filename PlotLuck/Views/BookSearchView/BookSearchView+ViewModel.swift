@@ -20,7 +20,7 @@ extension BookSearchView {
         var activityIndicatorActive: Bool
         
         @ObservationIgnored
-        private var shouldDismissView = false {
+        var shouldDismissView = false {
             didSet {
                 viewDismissalPublisher.send(shouldDismissView)
             }
