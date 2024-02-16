@@ -24,6 +24,7 @@
 		C62016932B7C1C9E0027BCBB /* UpdateReadingListItemUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62016922B7C1C9E0027BCBB /* UpdateReadingListItemUseCaseTests.swift */; };
 		C6383A292B7F9A3D000DE84F /* BookSearchViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6383A282B7F9A3D000DE84F /* BookSearchViewModelTests.swift */; };
 		C6383A2E2B7FA042000DE84F /* MockErrorLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6383A2D2B7FA042000DE84F /* MockErrorLogger.swift */; };
+		C6383A302B7FA9EB000DE84F /* ReadingListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6383A2F2B7FA9EB000DE84F /* ReadingListViewModelTests.swift */; };
 		C6547F6B2B7E785F003FC6B2 /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6547F6A2B7E785F003FC6B2 /* URLBuilder.swift */; };
 		C6547F6D2B7E8264003FC6B2 /* GoogleBooksURLBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6547F6C2B7E8264003FC6B2 /* GoogleBooksURLBuilderTests.swift */; };
 		C6547F6F2B7E8689003FC6B2 /* GoogleBooksDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6547F6E2B7E8689003FC6B2 /* GoogleBooksDataSourceTests.swift */; };
@@ -92,6 +93,7 @@
 		C62016922B7C1C9E0027BCBB /* UpdateReadingListItemUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateReadingListItemUseCaseTests.swift; sourceTree = "<group>"; };
 		C6383A282B7F9A3D000DE84F /* BookSearchViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchViewModelTests.swift; sourceTree = "<group>"; };
 		C6383A2D2B7FA042000DE84F /* MockErrorLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockErrorLogger.swift; sourceTree = "<group>"; };
+		C6383A2F2B7FA9EB000DE84F /* ReadingListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingListViewModelTests.swift; sourceTree = "<group>"; };
 		C6547F6A2B7E785F003FC6B2 /* URLBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBuilder.swift; sourceTree = "<group>"; };
 		C6547F6C2B7E8264003FC6B2 /* GoogleBooksURLBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleBooksURLBuilderTests.swift; sourceTree = "<group>"; };
 		C6547F6E2B7E8689003FC6B2 /* GoogleBooksDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleBooksDataSourceTests.swift; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				C6383A282B7F9A3D000DE84F /* BookSearchViewModelTests.swift */,
+				C6383A2F2B7FA9EB000DE84F /* ReadingListViewModelTests.swift */,
 			);
 			path = PresentationLayer;
 			sourceTree = "<group>";
@@ -585,6 +588,7 @@
 				C62016932B7C1C9E0027BCBB /* UpdateReadingListItemUseCaseTests.swift in Sources */,
 				C6DC7C622B7BF9F2005D23DE /* RemoveReadingListItemUseCaseTests.swift in Sources */,
 				C6E28A772B7BC6120033E2B6 /* LocalReadingListDataSourceTests.swift in Sources */,
+				C6383A302B7FA9EB000DE84F /* ReadingListViewModelTests.swift in Sources */,
 				C6383A292B7F9A3D000DE84F /* BookSearchViewModelTests.swift in Sources */,
 				C6547F7C2B7EB55A003FC6B2 /* DefaultReadingListRepositoryTests.swift in Sources */,
 				C65F5CBC2B7D493F00C20B51 /* MockBookSearchRepository.swift in Sources */,
