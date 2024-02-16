@@ -1,15 +1,15 @@
 //
-//  RemoveReadingListItemUseCaseTests.swift
+//  AddReadingListItemUseCaseTests.swift
 //  PlotLuckTests
 //
-//  Created by Stephen Walsh on 13/02/2024.
+//  Created by Stephen Walsh on 12/02/2024.
 //
 
 import XCTest
 import SwiftData
 @testable import PlotLuck
 
-final class RemoveReadingListItemUseCaseTests: XCTestCase {
+final class AddReadingListItemUseCaseTests: XCTestCase {
     
     private var modelContainer: ModelContainer?
     
@@ -18,18 +18,18 @@ final class RemoveReadingListItemUseCaseTests: XCTestCase {
         self.modelContainer = try ModelContainer(for: ReadingListItem.self, Book.self, configurations: config)
     }
     
-    func testRemoveReadingListItem_Success() async {
+    func testAddReadingListItem_Success() async {
         // Given
         let repository = MockReadingListRepository()
-        let useCase = RemoveReadingListItemUseCase(repository: repository)
-        
+        let useCase = AddReadingListItemUseCase(repository: repository)
         let item = ReadingListItem(
             book: .init(
-                title: "Hyperion",
-                author: "Dan K. Simmons",
-                isbn: "9781784877996"
+                title: "Norweigan Wood",
+                author: "Haruki Murakami",
+                isbn: "9781784877996", 
+                imageURLString: nil
             ),
-            status: .finished
+            status: .unread
         )
         
         // When
@@ -38,26 +38,27 @@ final class RemoveReadingListItemUseCaseTests: XCTestCase {
         // Then
         switch result {
         case .success:
-            XCTAssertEqual(repository.removedItemValue, item)
+            XCTAssertEqual(repository.didAddItemValue, item)
         case .failure:
-            XCTFail("removing item should not fail")
+            XCTFail("Adding item should not fail")
         }
     }
     
-    func testRemoveReadingListItem_Failure() async {
+    func testAddReadingListItem_Failure() async {
         // Given
         let repository = MockReadingListRepository()
-        let useCase = RemoveReadingListItemUseCase(repository: repository)
+        let useCase = AddReadingListItemUseCase(repository: repository)
         let item = ReadingListItem(
             book: .init(
-                title: "Hyperion",
-                author: "Dan K. Simmons",
-                isbn: "9781784877996"
+                title: "Norweigan Wood",
+                author: "Haruki Murakami",
+                isbn: "9781784877996", 
+                imageURLString: nil
             ),
-            status: .finished
+            status: .unread
         )
         
-        repository.errorValue = MockError(errorDescription: "Could not remove Reading List Item")
+        repository.errorValue = MockError(errorDescription: "Could not add Reading List Item")
         
         // When
         let result = await useCase.execute(for: item)
@@ -67,7 +68,7 @@ final class RemoveReadingListItemUseCaseTests: XCTestCase {
         case .success:
             XCTFail("Adding item should fail")
         case .failure(let error):
-            XCTAssertEqual(error.localizedDescription, "Could not remove Reading List Item", "Error should match")
+            XCTAssertEqual(error.localizedDescription, "Could not add Reading List Item", "Error should match")
         }
     }
 }

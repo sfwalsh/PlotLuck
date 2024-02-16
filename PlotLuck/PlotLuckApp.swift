@@ -17,7 +17,7 @@ struct PlotLuckApp: App {
             NavigationStack {
                 ReadingListViewFactory()
                     .create(for: .init(modelContext: modelContainer.mainContext))
-            }
+            }.modelContext(modelContainer.mainContext)
         }
     }
     

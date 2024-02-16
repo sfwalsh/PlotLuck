@@ -10,7 +10,10 @@ import SwiftData
 
 struct ReadingListView: View {
     
+    @Environment(\.modelContext) var modelContext
+    
     @State private var viewModel: ViewModel
+    @State private var showingBookSearchView = false
     
     init(viewModel: ViewModel) {
         _viewModel = State(initialValue: viewModel)
@@ -19,11 +22,7 @@ struct ReadingListView: View {
     var body: some View {
         List {
             ForEach(viewModel.items) { item in
-                ReadingListItemCell(
-                    titleText: item.book.title,
-                    subtitleText: item.book.author,
-                    footnoteText: item.status.localizedDescription
-                )
+                buildReadingListItemCell(for: item)
                 .swipeActions(edge: .trailing) {
                     createDeleteItemButton(for: item)
                     createItemStatusToggleButton(for: item)
@@ -33,11 +32,42 @@ struct ReadingListView: View {
         .listStyle(.inset)
         .navigationTitle("PlotLuck")
         .toolbar {
-            Button("Add Sample", action: viewModel.addSampleData)
+            Button {
+                showingBookSearchView.toggle()
+            } label: {
+                Image(systemName: "plus")
+            }
+            .sheet(isPresented: $showingBookSearchView) {
+                BookSearchViewFactory().create(for: .init(modelContext: modelContext))
+            }
         }
+        .onChange(of: showingBookSearchView, { oldValue, newValue in
+            viewModel.refreshData()
+        })
         .onAppear {
             viewModel.refreshData()
         }
+    }
+    
+    // Customisations to the encapsulating layout of the ListItemCell happen here,
+    // allowing the reuse of the shared functionality in BookSearchView
+    @ViewBuilder
+    private func buildReadingListItemCell(for item: ReadingListItem) -> some View {
+        VStack(alignment: .leading, spacing: 20) {
+            ListItemCell(
+                titleText: item.book.title,
+                subtitleText: item.book.author, 
+                imageURLString: item.book.imageURLString,
+                footnoteText: item.status.localizedDescription
+            )
+            Divider()
+                .frame(height: 0.5)
+                .overlay(Color.primary)
+                .opacity(0.4)
+                .padding(.horizontal, 12)
+        }
+        .padding(.top, 20)
+        .listRowSeparator(.hidden)
     }
     
     @ViewBuilder
