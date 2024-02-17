@@ -18,7 +18,7 @@ struct BookSearchViewFactory: ViewFactory {
         
         // coding challenge review convenience note: replace the call to SecretsInterface with hardcoded api key
         let urlBuilder = GoogleBooksURLBuilder(
-            apiKey: SecretsInterface.shared.googleBooksAPIKey
+            apiKey: SecretsInterface.shared.googleBooksAPIKey // <--- replace with APIKey if desired
         )
         
         let network = NetworkInterface.Default(urlSession: urlSession)
