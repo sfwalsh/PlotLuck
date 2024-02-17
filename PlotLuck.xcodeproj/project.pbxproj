@@ -61,6 +61,7 @@
 		C6F4A7F72B7D879000D1C360 /* NetworkInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F4A7F62B7D879000D1C360 /* NetworkInterface.swift */; };
 		C6F4A7F92B7D890700D1C360 /* BookSearchDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F4A7F82B7D890700D1C360 /* BookSearchDatasource.swift */; };
 		C6F4A7FB2B7D8A0F00D1C360 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F4A7FA2B7D8A0F00D1C360 /* NetworkError.swift */; };
+		C6F58EAB2B80FFE6009BFBE7 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = C6F58EAA2B80FFE6009BFBE7 /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +132,7 @@
 		C6F4A7F62B7D879000D1C360 /* NetworkInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInterface.swift; sourceTree = "<group>"; };
 		C6F4A7F82B7D890700D1C360 /* BookSearchDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchDatasource.swift; sourceTree = "<group>"; };
 		C6F4A7FA2B7D8A0F00D1C360 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		C6F58EAA2B80FFE6009BFBE7 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +180,7 @@
 				C611DF032B7A89EB00F92A18 /* Domain */,
 				C6547F862B7EBA49003FC6B2 /* Resources */,
 				C611DED02B7A747100F92A18 /* Preview Content */,
+				C6F58EAA2B80FFE6009BFBE7 /* Localizable.xcstrings */,
 			);
 			path = PlotLuck;
 			sourceTree = "<group>";
@@ -502,6 +505,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = C611DEBE2B7A747000F92A18;
 			productRefGroup = C611DEC82B7A747000F92A18 /* Products */;
@@ -521,6 +525,7 @@
 			files = (
 				C6547F7A2B7EB2A2003FC6B2 /* SecretCollection.plist in Resources */,
 				C611DED22B7A747100F92A18 /* Preview Assets.xcassets in Resources */,
+				C6F58EAB2B80FFE6009BFBE7 /* Localizable.xcstrings in Resources */,
 				C611DECF2B7A747100F92A18 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
