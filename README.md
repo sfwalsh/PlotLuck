@@ -9,7 +9,6 @@ Track Progress: Keep tabs on your reading journey with status updates for each b
 
 Simplify Organization: Enjoy a clutter-free experience with a single reading list for all your books.
 
-<!-- GETTING STARTED -->
 ## Getting Started
 
 ### Prerequisites
@@ -41,7 +40,6 @@ Swiping from right to left on an item in the reading list reveals a context menu
 #### Adding an Item / Additional Feature
 I decided to implement the challenge's additional feature here.
 The project uses the Google Books API for adding items to the user's reading list. Rather than entering the data for a book manually, a user can search for a book and add it to their reading list from here. This makes the app more user-friendly and helps maintain data accuracy.
-
 
 ---
 
