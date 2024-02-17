@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import FirebaseCrashlytics
 
 struct CrashlyticsLogger: ErrorLogger {
     func log(for error: Error) {
-        // Note in a production app, a logging service like Crashlyics would be implemented here
+        Crashlytics.crashlytics().record(error: error)
     }
 }
