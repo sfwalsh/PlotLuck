@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftData
+import FirebaseCore
 
 @main
 struct PlotLuckApp: App {
@@ -17,7 +18,8 @@ struct PlotLuckApp: App {
             NavigationStack {
                 ReadingListViewFactory()
                     .create(for: .init(modelContext: modelContainer.mainContext))
-            }.modelContext(modelContainer.mainContext)
+            }
+            .modelContext(modelContainer.mainContext)
         }
     }
     
@@ -27,6 +29,7 @@ struct PlotLuckApp: App {
         } catch {
             fatalError("Failed to create ModelContainer.")
         }
+        FirebaseApp.configure()
         styleNavigationBarAppearance()
     }
     
