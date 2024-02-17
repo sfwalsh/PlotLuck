@@ -30,9 +30,9 @@ struct BookSearchView: View {
                         ProgressView()
                     } else if viewModel.bookSearchResults.isEmpty {
                             ContentUnavailableView(
-                                "Book Search",
+                                String(localized: "BookSearch.EmptyState.Title"),
                                 systemImage: "book",
-                                description: Text("Add an item to your reading list using the search bar")
+                                description: Text(String(localized: "BookSearch.EmptyState.Description"))
                             )
                     }
                 }

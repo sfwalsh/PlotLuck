@@ -14,11 +14,11 @@ enum ReadingStatus: String, Codable, Equatable {
     var localizedDescription: String {
         switch self {
         case .unread:
-            "Unread"
+            String(localized: "statusUnread")
         case .inProgress:
-            "In Progress"
+            String(localized: "statusInProgress")
         case .finished:
-            "Finished"
+            String(localized: "statusFinished")
         }
     }
 }

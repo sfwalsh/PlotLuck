@@ -75,7 +75,7 @@ struct ReadingListView: View {
         Button(role: .destructive) {
             viewModel.removeReadingListItem(item)
         } label: {
-            Label("Delete", systemImage: "trash")
+            Label("SwipeAction.Delete.Title", systemImage: "trash")
         }
     }
     
@@ -88,7 +88,7 @@ struct ReadingListView: View {
                     item, to: .finished
                 )
             } label: {
-                Label("Mark Finished", systemImage: "book.closed")
+                Label("SwipeAction.Finished.Title", systemImage: "book.closed")
             }
         case .unread, .finished:
             Button {
@@ -96,7 +96,7 @@ struct ReadingListView: View {
                     item, to: .inProgress
                 )
             } label: {
-                Label("Mark in Progress", systemImage: "book")
+                Label("SwipeAction.InProgress.Title", systemImage: "book")
             }
         }
     }
