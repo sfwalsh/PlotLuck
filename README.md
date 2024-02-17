@@ -98,7 +98,7 @@ The repository and data layer structure for changing a ReadingListItem's title a
 Books are unread when they are added, UI could be added to change this. Since the Use Case pattern is implemented, this could be extended quite easily since the use cases are portable and detached from the view layer.
 
 #### Improved Error Handling
-There is an ErrorLogger protocol that is called when an error surfaces from the repository layer. However, the concrete instance of this protocol `CrashlyticsErrorLogger` isn't fully implemented due to time constraints.
+There is an ErrorLogger protocol that is called when an error surfaces from the repository layer. The implementation of the error logger only has simple error and crash tracking, but could be extended to implement user journeys and other analytics functions.
 
 #### General UX Improvements
 - It is currently possible to add multiple instances of the same book to the reading list.
