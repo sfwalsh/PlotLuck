@@ -34,6 +34,8 @@ extension ReadingListView {
         
         private(set) var items: [ReadingListItem]
         
+        var presentedError: AlertError?
+        
         init(
             addReadingListItem: AddReadingListItemUseCase,
             updateReadingListItemUseCase: UpdateReadingListItemUseCase,
@@ -87,7 +89,7 @@ extension ReadingListView {
         
         private func catchError(e: Error) {
             errorLogger.log(for: e)
-            // TODO: present error to user
+            presentedError = AlertError(error: e)
         }
     }
 }
