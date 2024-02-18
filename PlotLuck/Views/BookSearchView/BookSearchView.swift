@@ -56,6 +56,7 @@ struct BookSearchView: View {
                 }
                 .fontWeight(.medium)
             }
+            .errorAlert(error: $viewModel.presentedError)
         }
     }
     
