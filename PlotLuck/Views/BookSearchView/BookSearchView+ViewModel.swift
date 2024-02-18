@@ -19,6 +19,8 @@ extension BookSearchView {
         var viewDismissalPublisher = PassthroughSubject<Bool, Never>()
         var activityIndicatorActive: Bool
         
+        var presentedError: AlertError?
+        
         @ObservationIgnored
         var shouldDismissView = false {
             didSet {
@@ -92,7 +94,7 @@ extension BookSearchView {
                 bookSearchResults = results
             case .failure(let failure):
                 errorLogger.log(for: failure)
-                // TODO: present error to user
+                presentedError = AlertError(error: failure)
             }
         }
         
@@ -102,7 +104,7 @@ extension BookSearchView {
                 shouldDismissView = true
             case .failure(let failure):
                 errorLogger.log(for: failure)
-                // TODO: present error to user
+                presentedError = AlertError(error: failure)
             }
         }
     }
