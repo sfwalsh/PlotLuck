@@ -46,7 +46,7 @@ struct ReadingListView: View {
         })
         .onAppear {
             viewModel.refreshData()
-        }
+        }.errorAlert(error: $viewModel.presentedError)
     }
     
     // Customisations to the encapsulating layout of the ListItemCell happen here,
