@@ -9,7 +9,6 @@ Track Progress: Keep tabs on your reading journey with status updates for each b
 
 Simplify Organization: Enjoy a clutter-free experience with a single reading list for all your books.
 
-<!-- GETTING STARTED -->
 ## Getting Started
 
 ### Prerequisites
@@ -41,7 +40,6 @@ Swiping from right to left on an item in the reading list reveals a context menu
 #### Adding an Item / Additional Feature
 I decided to implement the challenge's additional feature here.
 The project uses the Google Books API for adding items to the user's reading list. Rather than entering the data for a book manually, a user can search for a book and add it to their reading list from here. This makes the app more user-friendly and helps maintain data accuracy.
-
 
 ---
 
@@ -100,7 +98,7 @@ The repository and data layer structure for changing a ReadingListItem's title a
 Books are unread when they are added, UI could be added to change this. Since the Use Case pattern is implemented, this could be extended quite easily since the use cases are portable and detached from the view layer.
 
 #### Improved Error Handling
-There is an ErrorLogger protocol that is called when an error surfaces from the repository layer. However, the concrete instance of this protocol `CrashlyticsErrorLogger` isn't fully implemented due to time constraints.
+There is an ErrorLogger protocol that is called when an error surfaces from the repository layer. The implementation of the error logger only has simple error and crash tracking, but could be extended to implement user journeys and other analytics functions.
 
 #### General UX Improvements
 - It is currently possible to add multiple instances of the same book to the reading list.
