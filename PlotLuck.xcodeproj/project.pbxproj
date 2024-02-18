@@ -561,7 +561,6 @@
 /* Begin PBXShellScriptBuildPhase section */
 		C6F58EB12B81063D009BFBE7 /* Copy dSym to Crashlytics */ = {
 			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
